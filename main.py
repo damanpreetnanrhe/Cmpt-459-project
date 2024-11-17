@@ -21,6 +21,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import label_binarize
+import os
 
 pd.set_option('display.max_columns', None)
 
@@ -316,6 +317,7 @@ data = pd.get_dummies(data, columns=categorical_columns, drop_first=False)
 
 
 X = data.drop(columns=['NObeyesdad'])
+print(X.info)
 y = data['NObeyesdad']
 
 # # Split the dataset
@@ -373,7 +375,7 @@ y = data['NObeyesdad']
 # results_df = pd.DataFrame(results)
 # print(results_df)
 
-
+os.makedirs("figs", exist_ok=True)
 classifiers = {
     'Random Forest': RandomForestClassifier(class_weight='balanced', random_state=42),
     'Gradient Boosting': GradientBoostingClassifier(random_state=42),
@@ -414,45 +416,68 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, test_
 # Initialize best classifier and score
 best_classifier = None
 best_score = 0.0
+results = []
+kf = KFold(n_splits=5, shuffle=True, random_state=42)
+
 
 # Iterate over classifiers and perform grid search for hyperparameter tuning
 for name, clf in classifiers.items():
-    grid_search = GridSearchCV(clf, param_grid[name], cv=5, scoring='f1')
+    grid_search = GridSearchCV(clf, param_grid[name], cv=kf, scoring='f1_weighted', n_jobs=-1)
     grid_search.fit(X_train, y_train)
     best_clf = grid_search.best_estimator_
     y_pred = best_clf.predict(X_test)
-    score = accuracy_score(y_test, y_pred)
-    if score > best_score:
-        best_score = score
+    y_proba = best_clf.predict_proba(X_test)[:, 1] if hasattr(best_clf, "predict_proba") else None
+
+    # Calculate metrics
+    accuracy = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred, average='weighted')
+    recall = recall_score(y_test, y_pred, average='weighted')
+    f1 = f1_score(y_test, y_pred, average='weighted')
+    auc = roc_auc_score(y_test, y_proba, multi_class='ovr') if y_proba is not None else None
+
+    # Store results
+    results.append({
+        "Model": name,
+        "Accuracy": accuracy,
+        "Precision": precision,
+        "Recall": recall,
+        "F1-Score": f1,
+        "AUC-ROC": auc
+    })
+
+    # Update the best classifier if current model performs better
+    if accuracy > best_score:
+        best_score = accuracy
         best_classifier = best_clf
 
+    # Plot confusion matrix
+    cm = confusion_matrix(y_test, y_pred)
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+    disp.plot(cmap=plt.cm.Blues)
+    plt.title(f"Confusion Matrix - {name}")
+    plt.savefig(f'figs/confusion_matrix_{name}.png')
+    plt.show()
 
-#Learning the roc curve for the obtained model
-y_preds = best_classifier.predict(X_test).ravel()
-fpr, tpr, thresholds = roc_curve(y_test, y_preds)
+    # Plot ROC curve if probabilities are available
+    if y_proba is not None:
+        fpr, tpr, _ = roc_curve(y_test, y_proba)
+        plt.figure(figsize=(10, 6))
+        plt.plot(fpr, tpr, color='blue', label='ROC curve')
+        plt.plot([0, 1], [0, 1], color='red', linestyle='--')
+        plt.xlabel('False Positive Rate')
+        plt.ylabel('True Positive Rate')
+        plt.title(f'ROC Curve - {name}')
+        plt.legend(loc='lower right')
+        plt.savefig(f'figs/roc_curve_{name}.png')
+        plt.show()
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+# Print best classifier and evaluation metrics
+for result in results:
+    print(f"Model: {result['Model']}")
+    print(f"Accuracy: {result['Accuracy']:.4f}")
+    print(f"Precision: {result['Precision']:.4f}")
+    print(f"Recall: {result['Recall']:.4f}")
+    print(f"F1-Score: {result['F1-Score']:.4f}")
+    print(f"AUC-ROC: {result['AUC-ROC']:.4f}\n")
 
-ax1.plot(fpr, tpr, color='blue', label='ROC curve')
-ax1.plot([0, 1], [0, 1], color='red', linestyle='--')  # Diagonal line
-ax1.set_xlabel('False Positive Rate')
-ax1.set_ylabel('True Positive Rate')
-ax1.set_title('ROC Curve')
-ax1.legend(loc='lower right')
-
-mythrehold = 0.5
-cm = confusion_matrix(y_test, y_pred)
-disp = ConfusionMatrixDisplay(confusion_matrix=cm)
-ax2.matshow(cm, cmap=plt.cm.Blues, alpha=0.7)
-for i in range(cm.shape[0]):
-    for j in range(cm.shape[1]):
-        ax2.text(x=j, y=i, s=cm[i, j], va='center', ha='center')
-plt.xlabel('Predicted label')
-plt.ylabel('True label')
-plt.title('Confusion Matrix')
-plt.tight_layout()
-
-plt.savefig('roc_curve.png')
-
-
-print(f"Best classifier: {best_classifier}\nBest Accuracy score: {best_score}")
+print(f"Best Classifier: {best_classifier}\nBest Accuracy Score: {best_score:.4f}")
