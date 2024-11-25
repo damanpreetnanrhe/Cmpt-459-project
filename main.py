@@ -18,6 +18,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import (accuracy_score, precision_score, recall_score, f1_score, roc_auc_score,
                              confusion_matrix, roc_curve, ConfusionMatrixDisplay)
+from sklearn.feature_selection import mutual_info_classif
+from sklearn.feature_selection import RFE
 
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
@@ -355,6 +357,25 @@ print(f"Remaining data after outlier removal: {cleaned_data.shape}")
 # Save cleaned data if necessary
 cleaned_data.to_csv('cleaned_data.csv', index=False)
 
+# ----------------------------------------Feature Selection----------------------------------------
+
+# Mutual Information
+mi_scores = mutual_info_classif(data[numerical_columns], data['NObeyesdad'])
+mi_scores_df = pd.DataFrame({'Feature': numerical_columns, 'MI Score': mi_scores}).sort_values(by='MI Score', ascending=False)
+
+print("Mutual Information Scores:")
+print(mi_scores_df)
+
+# Top feature based on the scores
+selected_features_mi = mi_scores_df[mi_scores_df['MI Score'] > 0.01]['Feature'].tolist()  # Example threshold
+print("Selected Features by Mutual Information:", selected_features_mi)
+
+# # Recursive Feature Elimination 
+# rf = RandomForestClassifier(random_state=42)
+# rfe = RFE(estimator=rf, n_features_to_select=5)  
+# rfe.fit(data[numerical_columns], data['NObeyesdad'])
+# selected_features_rfe = [feature for feature, selected in zip(numerical_columns, rfe.support_) if selected]
+# print("Selected Features by RFE:", selected_features_rfe)
 
 
 
