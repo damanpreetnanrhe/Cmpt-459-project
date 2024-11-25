@@ -3,15 +3,12 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 23.0,1.8,77.0,2.0,3.0,2.0,2.0,1.0,0,2,3,1,0,1,1,3,1,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,True,False,False,False,False,False,True,False
 27.0,1.8,87.0,3.0,3.0,2.0,2.0,0.0,1,3,3,2,2,1,1,3,0,False,True,True,False,True,False,False,False,True,False,True,False,True,False,False,True,False,False,False,False,False,False,True
 22.0,1.78,89.8,2.0,1.0,2.0,0.0,0.0,1,1,3,2,0,0,1,0,0,False,True,True,False,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-29.0,1.62,53.0,2.0,3.0,2.0,0.0,0.0,0,3,0,0,0,1,1,0,0,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 23.0,1.5,55.0,3.0,3.0,2.0,1.0,0.0,0,2,0,0,2,1,1,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,True,False,False
 22.0,1.64,53.0,2.0,3.0,2.0,3.0,0.0,0,1,1,0,0,1,1,3,0,False,True,True,False,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 24.0,1.78,64.0,3.0,3.0,2.0,1.0,1.0,0,2,3,0,2,1,1,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,False,False,False,True,False
 22.0,1.72,68.0,2.0,3.0,2.0,1.0,1.0,0,1,2,1,0,1,1,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-26.0,1.85,105.0,3.0,3.0,3.0,2.0,2.0,1,2,3,2,2,1,3,3,2,False,True,False,True,False,True,False,True,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.0,1.72,80.0,2.0,3.0,2.0,2.0,1.0,1,1,2,1,0,1,1,3,1,True,False,False,True,False,True,False,True,False,False,True,False,False,True,False,False,True,False,False,False,False,True,False
 22.0,1.65,56.0,3.0,3.0,3.0,2.0,0.0,0,1,1,0,2,1,3,3,0,False,True,True,False,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-41.0,1.8,99.0,2.0,3.0,2.0,2.0,1.0,1,3,3,2,0,1,1,3,1,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,True,False,False,True,False,False,False,False
 23.0,1.77,60.0,3.0,1.0,1.0,1.0,1.0,0,2,3,0,2,0,0,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 22.0,1.7,66.0,3.0,3.0,2.0,2.0,1.0,0,1,1,0,2,1,1,3,1,True,False,False,True,True,False,True,False,False,False,True,False,False,True,False,False,True,False,False,False,False,True,False
 29.0,1.53,78.0,2.0,1.0,2.0,0.0,0.0,1,3,0,1,0,0,1,0,0,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
@@ -118,7 +115,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 20.0,1.58,53.0,2.0,4.0,2.0,1.0,1.0,0,1,0,0,0,2,1,1,1,True,False,False,True,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 23.0,1.62,58.0,2.0,3.0,1.0,1.0,0.0,0,2,0,0,0,1,0,1,0,False,True,True,False,True,False,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 19.0,1.65,56.0,3.0,3.0,3.0,1.0,2.0,0,0,1,0,2,1,3,1,2,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False,False,False,False,True,False
-61.0,1.65,66.0,3.0,3.0,2.0,1.0,1.0,0,3,1,0,2,1,1,1,1,True,False,True,False,False,True,True,False,False,False,True,False,True,False,False,True,False,False,False,False,False,True,False
 30.0,1.77,109.0,3.0,3.0,1.0,2.0,0.0,1,3,3,3,2,1,0,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 24.0,1.7,75.0,2.0,3.0,2.0,1.0,0.0,1,2,1,1,0,1,1,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 25.0,1.79,72.0,2.0,3.0,2.0,1.0,1.0,0,2,3,1,0,1,1,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -143,9 +139,7 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 40.0,1.55,62.0,3.0,3.0,3.0,0.0,0.0,1,3,0,0,2,1,3,0,0,True,False,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 27.0,1.64,78.0,2.0,1.0,2.0,0.0,0.0,1,3,1,1,0,0,1,0,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,True,False,False,False,False
 20.0,1.83,72.0,3.0,3.0,1.0,2.0,1.0,0,1,3,1,2,1,0,3,1,False,True,False,True,True,False,False,False,True,False,False,True,True,False,False,False,True,False,False,False,False,True,False
-55.0,1.65,80.0,2.0,3.0,2.0,1.0,0.0,1,3,1,1,0,1,1,1,0,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 21.0,1.63,60.0,3.0,3.0,2.0,2.0,0.0,0,1,0,0,2,1,1,3,0,True,False,False,True,False,True,True,False,False,False,False,True,True,False,False,False,True,False,False,False,False,True,False
-25.0,1.89,75.0,3.0,3.0,2.0,3.0,0.0,0,2,3,1,2,1,1,3,0,False,True,True,False,True,False,False,True,False,False,True,False,False,True,False,False,False,True,False,False,False,True,False
 35.0,1.77,85.0,3.0,3.0,3.0,2.0,1.0,1,3,3,2,2,1,3,3,1,False,True,False,True,True,False,False,True,False,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 30.0,1.92,130.0,2.0,3.0,1.0,1.0,0.0,1,3,3,3,0,1,0,1,0,False,True,False,True,True,False,False,False,True,False,False,True,True,False,False,False,True,False,False,False,False,True,False
 29.0,1.74,72.0,3.0,3.0,2.0,0.0,0.0,0,3,2,1,2,1,1,0,0,True,False,False,True,True,False,True,False,False,False,True,False,True,False,False,False,True,False,True,False,False,False,False
@@ -157,10 +151,8 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 23.0,1.65,59.0,3.0,1.0,2.0,1.0,2.0,0,2,1,0,2,0,1,1,2,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.0,1.74,64.0,3.0,3.0,2.0,0.0,1.0,0,0,2,0,2,1,1,0,1,False,True,True,False,True,False,False,False,True,False,True,False,False,True,False,False,False,True,False,False,False,True,False
 38.0,1.64,59.8,2.0,3.0,2.0,2.0,0.0,0,3,1,0,0,1,1,3,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-18.0,1.57,48.0,3.0,1.0,1.0,1.0,0.0,0,0,0,0,2,0,0,1,0,True,False,False,True,False,True,True,False,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 22.0,1.84,84.0,3.0,3.0,2.0,3.0,0.0,0,1,3,2,2,1,1,3,0,False,True,False,True,False,True,False,True,False,False,True,False,False,True,False,False,True,False,False,False,False,True,False
 26.0,1.91,84.0,3.0,3.0,2.0,2.0,2.0,0,2,3,2,2,1,1,3,2,False,True,False,True,False,True,False,True,False,False,False,True,True,False,False,True,False,False,False,False,False,True,False
-18.0,1.58,48.0,2.0,3.0,2.0,1.0,0.0,0,0,0,0,0,1,1,1,0,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 23.0,1.68,67.0,2.0,3.0,1.0,0.0,0.0,0,2,1,1,0,1,0,0,0,True,False,False,True,False,True,False,True,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 22.0,1.68,52.0,3.0,3.0,2.0,0.0,1.0,0,1,1,0,2,1,1,0,1,True,False,True,False,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 23.0,1.48,60.0,2.0,1.0,1.0,0.0,0.0,1,2,0,0,0,0,0,0,0,True,False,False,True,False,True,False,False,True,False,False,True,True,False,False,False,True,False,False,False,False,True,False
@@ -209,7 +201,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 19.0,1.69,70.0,2.0,1.0,2.0,2.0,0.0,0,0,1,1,0,0,1,3,0,True,False,False,True,True,False,False,False,False,True,True,False,True,False,False,False,False,True,False,False,False,True,False
 21.0,1.66,59.0,1.0,3.0,2.0,3.0,0.0,0,1,1,0,0,1,1,3,0,True,False,True,False,False,True,True,False,False,False,True,False,False,True,False,False,False,True,True,False,False,False,False
 19.0,1.64,53.0,3.0,3.0,1.0,1.0,1.0,0,0,1,0,2,1,0,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-20.0,1.62,53.0,3.0,1.0,3.0,1.0,1.0,0,1,0,0,2,0,3,1,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 19.0,1.7,64.0,3.0,3.0,3.0,3.0,1.0,0,0,1,0,2,1,3,3,1,True,False,False,True,False,True,False,False,False,True,True,False,False,True,False,False,False,True,False,False,False,True,False
 17.0,1.63,65.0,2.0,1.0,3.0,1.0,1.0,0,0,0,0,0,0,3,1,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 22.0,1.6,66.0,3.0,3.0,2.0,3.0,0.0,1,1,0,0,2,1,1,3,0,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,True,False,False,False
@@ -223,8 +214,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 21.0,1.76,78.0,3.0,1.0,2.0,3.0,0.0,1,1,2,1,2,0,1,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,False,True
 20.0,1.65,75.0,3.0,1.0,2.0,1.0,1.0,1,1,1,1,2,0,1,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 20.0,1.67,78.0,2.0,1.0,3.0,0.0,0.0,1,1,1,1,0,0,3,0,0,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,True,False,False,True,False,False,False,False
-56.0,1.79,90.0,2.0,3.0,2.0,1.0,0.0,1,3,3,2,0,1,1,1,0,False,True,False,True,True,False,False,False,True,False,False,True,True,False,False,True,False,False,True,False,False,False,False
-26.0,1.59,47.0,2.0,1.0,2.0,0.0,2.0,0,2,0,0,0,0,1,0,2,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 22.0,1.64,56.0,3.0,3.0,2.0,0.0,0.0,0,1,1,0,2,1,1,0,0,True,False,False,True,True,False,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 19.0,1.78,81.0,1.0,3.0,2.0,3.0,0.0,1,0,3,1,0,1,1,3,0,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,False,True,False,True,False,False,False
 18.0,1.75,85.0,2.0,3.0,3.0,1.0,0.0,1,0,2,2,0,1,3,1,0,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -238,14 +227,12 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 18.0,1.87,67.0,3.0,3.0,3.0,1.0,1.0,0,0,3,1,2,1,3,1,1,False,True,False,True,False,True,False,True,False,False,True,False,False,True,False,False,True,False,True,False,False,False,False
 18.0,1.7,50.0,1.0,3.0,1.0,2.0,1.0,0,0,1,0,0,1,0,3,1,False,True,True,False,False,True,False,True,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 38.0,1.7,78.0,3.0,3.0,2.0,0.0,0.0,1,3,1,1,2,1,1,0,0,False,True,True,False,False,True,False,True,False,False,True,False,True,False,False,True,False,False,True,False,False,False,False
-17.0,1.67,60.0,2.0,4.0,2.0,0.0,2.0,0,0,1,0,0,2,1,0,2,False,True,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 23.0,1.72,66.0,2.0,3.0,2.0,0.0,1.0,0,2,2,0,0,1,1,0,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,False,True
 23.0,1.82,107.0,2.0,3.0,3.0,0.0,1.0,1,2,3,2,0,1,3,0,1,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.0,1.7,60.0,2.0,3.0,2.0,2.0,1.0,0,0,1,0,0,1,1,3,1,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 25.0,1.71,71.0,2.0,3.0,2.0,0.0,0.0,0,2,2,1,0,1,1,0,0,False,True,False,True,False,True,False,True,False,False,True,False,True,False,False,False,True,False,False,False,True,False,False
 25.0,1.61,61.0,2.0,3.0,1.0,2.0,1.0,0,2,0,0,0,1,0,3,1,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.0,1.5,50.0,3.0,3.0,2.0,0.0,1.0,0,0,0,0,2,1,1,0,1,True,False,False,True,False,True,False,True,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-16.0,1.67,50.0,2.0,1.0,3.0,1.0,0.0,0,0,1,0,0,0,3,1,0,False,True,False,True,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 32.0,1.57,57.0,3.0,3.0,2.0,0.0,0.0,0,3,0,0,2,1,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 18.0,1.79,52.0,3.0,3.0,2.0,1.0,1.0,0,0,3,0,2,1,1,1,1,False,True,True,False,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.0,1.75,62.0,3.0,4.0,2.0,0.0,0.0,0,1,2,0,2,2,1,0,0,False,True,True,False,False,True,False,True,False,False,False,True,True,False,False,False,True,False,False,False,False,True,False
@@ -269,14 +256,11 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 23.0,1.7,75.0,3.0,3.0,3.0,1.0,2.0,1,2,1,1,2,1,3,1,2,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.7,70.0,2.0,3.0,1.0,0.0,0.0,0,2,1,1,0,1,0,0,0,False,True,True,False,False,True,False,False,True,False,False,True,True,False,False,False,True,False,False,False,False,True,False
 18.0,1.72,55.0,2.0,4.0,2.0,2.0,1.0,0,0,2,0,0,2,1,3,1,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-16.0,1.57,49.0,2.0,4.0,2.0,0.0,1.0,0,0,0,0,0,2,1,0,1,True,False,True,False,False,True,True,False,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.0,1.8,85.0,2.0,3.0,3.0,2.0,1.0,1,1,3,2,0,1,3,3,1,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 23.0,1.75,120.0,2.0,3.0,2.0,2.0,1.0,1,2,2,3,0,1,1,3,1,False,True,False,True,False,True,False,False,True,False,False,True,True,False,False,False,True,False,False,False,False,True,False
 24.0,1.56,60.0,1.0,3.0,2.0,0.0,2.0,0,2,0,0,0,1,1,0,2,True,False,False,True,False,True,True,False,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.0,1.8,75.0,3.0,4.0,3.0,2.0,0.0,0,1,3,1,2,2,3,3,0,False,True,True,False,False,True,True,False,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 17.0,1.79,57.0,2.0,4.0,2.0,2.0,1.0,0,0,3,0,0,2,1,3,1,False,True,False,True,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-17.0,1.72,62.0,2.0,3.0,2.0,3.0,1.0,0,0,2,0,0,1,1,3,1,False,True,True,False,False,True,True,False,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-16.0,1.6,57.0,3.0,3.0,1.0,3.0,0.0,0,0,0,0,2,1,0,3,0,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 17.0,1.66,56.0,1.0,3.0,2.0,1.0,1.0,0,0,1,0,0,1,1,1,1,False,True,False,True,False,True,True,False,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.65,63.0,3.0,3.0,1.0,1.0,0.0,0,2,1,0,2,1,0,1,0,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,False,True
 26.0,1.7,72.0,2.0,3.0,2.0,0.0,0.0,0,2,1,1,0,1,1,0,0,False,True,True,False,False,True,True,False,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -304,7 +288,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 20.0,1.6,50.0,2.0,3.0,1.0,0.0,0.0,0,1,0,0,0,1,0,0,0,False,True,True,False,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 23.0,1.74,105.0,3.0,3.0,2.0,1.0,0.0,1,2,2,2,2,1,1,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 23.0,1.65,66.0,3.0,3.0,2.0,3.0,0.0,0,2,1,0,2,1,1,3,0,False,True,True,False,True,False,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-18.0,1.87,173.0,3.0,3.0,2.0,2.0,1.0,1,0,3,3,2,1,1,3,1,False,True,False,True,False,True,False,True,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 17.0,1.7,55.0,3.0,3.0,2.0,3.0,1.0,0,0,1,0,2,1,1,3,1,False,True,True,False,False,True,True,False,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.0,1.54,47.0,3.0,3.0,1.0,2.0,0.0,0,1,0,0,2,1,0,3,0,True,False,False,True,True,False,True,False,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 17.0,1.8,97.0,2.0,3.0,3.0,1.0,1.0,1,0,3,2,0,1,3,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,False,True
@@ -316,7 +299,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 27.0,1.55,62.0,3.0,1.0,1.0,1.0,0.0,1,3,0,0,2,0,0,1,0,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 17.0,1.9,60.0,3.0,3.0,2.0,3.0,1.0,0,0,3,0,2,1,1,3,1,False,True,True,False,True,False,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,False,True
 17.0,1.7,56.0,1.0,3.0,1.0,1.0,1.0,0,0,1,0,0,1,0,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
-33.0,1.56,48.0,2.0,3.0,2.0,1.0,0.0,0,3,0,0,0,1,1,1,0,True,False,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.0,1.87,75.0,2.0,3.0,1.0,1.0,1.0,0,1,3,1,0,1,0,1,1,False,True,True,False,False,True,False,True,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 40.0,1.56,80.0,2.0,1.0,2.0,2.0,0.0,1,3,0,1,0,0,1,3,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 37.0,1.65,73.0,3.0,3.0,2.0,1.0,0.0,1,3,1,1,2,1,1,1,0,True,False,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
@@ -338,7 +320,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 17.0,1.7,70.0,3.0,3.0,2.0,0.0,2.0,0,0,1,1,2,1,1,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,False,True
 25.0,1.7,83.0,3.0,3.0,3.0,3.0,0.0,1,2,1,1,2,1,3,3,0,False,True,True,False,False,True,False,False,True,False,True,False,False,True,False,False,False,True,False,False,True,False,False
 21.0,1.8,75.0,3.0,3.0,1.0,2.0,0.0,0,1,3,1,2,1,0,3,0,False,True,False,True,False,True,False,True,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-29.0,1.6,56.0,2.0,3.0,1.0,0.0,1.0,0,3,0,0,0,1,0,0,1,True,False,False,True,True,False,False,True,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 17.0,1.7,98.0,2.0,3.0,2.0,0.0,1.0,1,0,1,2,0,1,1,0,1,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 16.0,1.55,45.0,2.0,3.0,2.0,1.0,1.0,0,0,0,0,0,1,1,1,1,True,False,True,False,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 37.0,1.5,75.0,2.0,3.0,1.0,0.0,0.0,1,3,0,1,0,1,0,0,0,True,False,False,True,False,True,False,True,False,False,True,False,True,False,False,False,True,False,False,False,True,False,False
@@ -353,7 +334,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 18.0,1.65,70.0,2.0,3.0,2.0,0.0,0.0,1,0,1,1,0,1,1,0,0,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 26.0,1.83,82.0,2.0,3.0,2.0,1.0,1.0,0,2,3,1,0,1,1,1,1,False,True,True,False,False,True,True,False,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 27.0,1.83,99.0,3.0,1.0,2.0,2.0,1.0,1,3,3,2,2,0,1,3,1,False,True,False,True,False,True,False,True,False,False,True,False,True,False,False,False,True,False,False,False,False,False,True
-26.0,1.66,112.0,3.0,3.0,3.0,0.0,0.0,1,2,1,3,2,1,3,0,0,True,False,False,True,True,False,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 34.0,1.78,73.0,2.0,3.0,2.0,3.0,1.0,0,3,3,1,0,1,1,3,1,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 18.0,1.74,86.0,3.0,3.0,2.0,3.0,0.0,1,0,2,2,2,1,1,3,0,False,True,True,False,True,False,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 33.0,1.76,66.5,2.0,3.0,2.0,3.0,1.0,0,3,2,1,0,1,1,3,1,False,True,True,False,True,False,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
@@ -362,7 +342,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 20.0,1.6,65.0,3.0,3.0,2.0,0.0,0.0,1,1,0,0,2,1,1,0,0,True,False,True,False,True,False,False,False,True,False,True,False,False,True,False,False,True,False,False,False,False,True,False
 33.0,1.85,85.0,2.0,3.0,2.0,1.0,0.0,0,3,3,2,0,1,1,1,0,False,True,True,False,False,True,False,True,False,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 33.0,1.75,85.0,2.0,3.0,2.0,1.0,0.0,1,3,2,2,0,1,1,1,0,False,True,True,False,True,False,False,False,True,False,True,False,False,True,False,False,True,False,False,False,False,True,False
-14.0,1.71,72.0,3.0,3.0,3.0,2.0,1.0,0,0,2,1,2,1,3,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,False,True
 34.0,1.84,88.0,3.0,3.0,1.0,2.0,0.0,1,3,3,2,2,1,0,3,0,False,True,True,False,False,True,False,False,True,False,True,False,False,True,False,False,False,True,True,False,False,False,False
 18.0,1.77,87.0,3.0,3.0,2.0,1.0,1.0,1,0,3,2,2,1,1,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,False,False,False,True,False
 18.0,1.7,90.0,3.0,3.0,2.0,2.0,0.0,1,0,1,2,2,1,1,3,0,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -438,8 +417,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 25.196214,1.686306,104.572712,3.0,3.0,1.152736,0.319156,1.0,1,2,1,2,2,1,0,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.503343,1.683124,126.67378,3.0,3.0,1.115967,1.541072,1.0,1,0,1,3,2,1,0,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.622397,110.79263,3.0,3.0,2.704507,0.0,0.29499,1,2,0,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-21.853826,1.755643,137.796884,3.0,3.0,2.184707,1.978631,0.838957,1,1,2,3,2,1,2,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-21.90012,1.843419,165.057269,3.0,3.0,2.406541,0.10032,0.479221,1,1,3,3,2,1,2,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.306615,1.7456,133.03441,3.0,3.0,2.984323,1.586525,0.62535,1,0,2,3,2,1,3,2,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.630927,111.485516,3.0,3.0,2.444125,0.0,0.26579,1,2,1,3,2,1,2,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.629191,104.826776,3.0,3.0,2.654702,0.0,0.555468,1,2,0,2,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -479,12 +456,9 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 19.058511,1.662017,49.838965,1.4925,3.0,1.049134,2.0,1.0,0,0,1,0,0,1,0,3,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.827008,1.7,50.0,1.0,3.240578,1.0,2.0,1.0,0,0,1,0,0,2,0,3,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.314964,1.661403,49.932199,2.205439,3.0,1.530531,2.0,1.0,0,0,1,0,1,1,0,3,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-29.970445,1.610863,49.516027,2.059138,3.904858,2.0,0.821977,0.0,0,3,0,0,1,2,1,1,0,True,False,False,True,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-32.383858,1.640688,46.655622,3.0,3.11158,2.721769,1.44287,0.0,0,3,1,0,2,2,3,2,0,True,False,False,True,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 24.163526,1.64603,49.839685,3.0,3.590039,2.7305,0.107078,0.0,0,2,1,0,2,2,3,0,0,True,False,False,True,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 17.038222,1.710564,51.588874,2.0,2.057935,2.371015,0.288032,0.714627,0,0,2,0,0,0,2,1,1,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 16.30687,1.752755,50.0,2.310423,3.558637,1.787843,1.926592,0.828549,0,0,2,0,1,2,1,3,1,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-16.198153,1.691007,52.629374,2.0,2.000986,2.673835,0.99295,0.474836,0,0,1,0,0,0,3,1,0,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.0,1.753349,51.457226,2.823179,3.0,1.773236,1.252472,1.0,0,0,2,0,2,1,1,2,1,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.0,1.781543,50.869704,2.052932,3.0,2.0,0.520408,1.0,0,0,3,0,1,1,1,1,1,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.0,1.755823,52.331172,2.596364,3.0,2.0,0.281734,1.488372,0,0,2,0,2,1,1,1,2,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -517,7 +491,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 17.402028,1.710756,50.0,2.015258,3.300666,1.315608,0.069802,1.0,0,0,2,0,1,2,0,0,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.0,1.7,50.0,1.031149,3.0,1.963628,0.028202,1.0,0,0,1,0,0,1,1,0,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.48207,1.7,50.0,1.592183,3.535016,1.086391,0.618913,1.0,0,0,1,0,0,2,0,1,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-19.94814,1.530884,39.371523,1.522001,3.0,1.98126,2.306844,0.720454,0,1,0,0,0,1,1,3,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.400053,1.529724,40.343463,2.703436,2.884479,1.439962,0.144627,0.322307,0,1,0,0,2,1,0,1,0,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.556729,1.767563,56.307019,2.362918,4.0,2.358172,2.0,0.939819,0,0,2,0,1,2,2,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 17.70368,1.883364,60.0,3.0,3.626815,2.0,2.011519,0.456462,0,0,3,0,2,2,1,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
@@ -548,7 +521,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 19.931667,1.653209,49.026214,2.530066,3.0,1.965237,2.0,1.0,0,1,1,0,2,1,1,3,1,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 22.998709,1.740108,53.65727,2.241606,3.0,1.846626,2.460238,0.814518,0,2,2,0,1,1,1,3,1,True,False,False,True,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 18.006742,1.7,50.0,1.003566,3.238258,1.014634,0.783676,1.0,0,0,1,0,0,2,0,1,1,True,False,True,False,False,True,False,True,False,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-16.496978,1.691206,50.0,2.0,1.630846,2.975528,0.548991,0.369134,0,0,1,0,0,0,3,1,0,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.0,1.788459,51.552595,2.897899,3.0,1.835545,1.162519,1.0,0,0,3,0,2,1,1,2,1,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 17.377131,1.811238,58.83071,2.483979,3.762778,2.0,2.0,0.930051,0,0,3,0,2,2,1,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 17.080493,1.782756,56.029418,2.0,4.0,2.28525,2.0,1.162801,0,0,3,0,0,2,2,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
@@ -602,7 +574,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 19.007177,1.690727,49.895716,1.212908,3.207071,1.029703,2.0,1.0,0,0,1,0,0,2,0,3,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.288205,1.713564,50.0,1.140615,3.471536,1.0,2.0,1.0,0,0,2,0,0,2,0,3,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.314429,1.67231,49.713944,2.562409,3.488342,1.67062,2.0,1.0,0,0,1,0,2,2,1,3,1,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-27.14823,1.660446,49.558304,2.004146,3.443456,2.020764,1.078719,1.26729,0,3,1,0,1,2,2,2,2,True,False,False,True,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 25.380557,1.630379,46.062954,2.690754,3.03779,2.212296,1.616882,0.0,0,2,1,0,2,2,2,2,0,True,False,False,True,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 22.867719,1.655413,50.424661,3.0,3.642802,1.995177,0.118271,0.065515,0,2,1,0,2,2,1,0,0,True,False,False,True,False,True,False,True,False,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 17.729923,1.732862,51.216463,2.051283,2.645858,2.35752,0.291309,0.897942,0,0,2,0,1,0,2,1,1,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -797,7 +768,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 21.052894,1.694633,75.0522,2.178889,3.563744,1.853991,0.997731,0.0,1,1,1,1,1,2,1,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.0,1.618148,68.981403,1.142468,3.0,2.197732,0.827506,0.572877,1,1,0,1,0,1,2,1,0,True,False,False,True,False,True,False,False,False,True,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.241058,1.856811,88.633616,2.047069,3.829101,1.641022,1.554817,0.248218,1,0,3,2,1,2,1,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-38.939448,1.738321,86.934846,2.843709,3.058539,1.130079,2.834373,0.044954,1,3,2,2,2,2,0,3,0,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 39.965474,1.739293,80.914382,2.416044,3.196043,1.352649,0.148628,1.08266,1,3,2,1,2,2,0,1,2,True,False,True,False,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 20.261925,1.807538,85.316125,2.0,3.0,1.968011,1.072662,0.776758,1,1,3,2,0,1,1,2,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.31094,1.849425,85.228116,2.146598,3.0,2.100112,1.17116,0.833761,1,1,3,2,1,1,2,2,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -901,7 +871,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 25.19291,1.7,80.749657,2.54527,3.0,2.269564,0.503122,1.0,1,2,1,1,2,1,2,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,False,False,False,True,False
 34.389906,1.68108,83.568035,2.0,1.660768,2.482294,0.891205,0.0,1,3,1,2,0,0,3,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 26.595893,1.660756,78.574786,2.0,2.597608,2.0,0.0,0.434198,1,3,1,1,0,0,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,False,False,False,True,False
-55.24625,1.769269,80.491339,2.0,3.0,2.0,1.0,0.0,1,3,2,1,0,1,1,1,0,False,True,True,False,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 34.543563,1.765188,85.0,2.694281,3.0,2.653831,1.96582,0.891189,1,3,2,2,2,1,3,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 21.808159,1.65,80.0,2.0,3.0,2.0,0.826609,2.0,1,1,1,1,0,1,1,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 18.118277,1.654757,80.0,2.821977,2.044035,1.954968,1.0,0.854536,1,0,1,1,2,0,1,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
@@ -922,7 +891,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 18.863875,1.560029,71.728069,3.0,3.339914,2.0,1.0,1.0,1,0,0,1,2,2,1,1,1,True,False,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.951144,1.621048,72.105856,3.0,3.884861,2.0,1.0,1.0,1,0,0,1,2,2,1,1,1,True,False,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.671876,1.699474,78.0,1.925064,2.358298,2.774043,0.0,0.133566,1,0,1,1,0,0,3,0,0,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-50.832559,1.745528,82.130728,2.0,3.0,1.774778,0.943266,0.0,1,3,2,1,0,1,1,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 17.971574,1.720379,85.0,2.0,3.0,2.802498,1.0,0.41758,1,0,2,2,0,1,3,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.0,1.758787,85.050558,2.846981,3.0,2.87781,1.0,0.429081,1,0,2,2,2,1,3,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.701766,1.704908,81.384224,2.650629,1.0,1.708083,1.876051,0.938791,1,0,2,1,2,0,1,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -974,7 +942,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 28.824194,1.7,78.0,3.0,3.0,2.147074,1.416076,1.0,1,3,1,1,2,1,2,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,True,False,False,False,False
 34.204611,1.719509,84.416515,2.031246,3.0,2.803002,1.98448,0.418623,1,3,2,2,1,1,3,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 28.167799,1.658202,78.0,2.938031,1.532833,1.931242,0.525002,0.371941,1,3,1,1,2,0,1,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,True,False,False,False,False
-55.137881,1.657221,80.993213,2.0,3.0,2.0,1.0,0.0,1,3,1,1,0,1,1,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 34.970367,1.713348,84.722222,2.884212,3.0,3.0,2.0,0.8324,1,3,2,2,2,1,3,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 20.986834,1.677178,80.379575,2.0,2.961706,2.0,1.661556,1.114716,1,1,1,1,0,1,1,2,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 38.378056,1.67805,77.224574,2.444599,3.0,1.029798,0.0,0.0,1,3,1,1,2,1,0,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
@@ -987,7 +954,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 33.182127,1.838441,97.029249,2.0,1.977221,3.0,1.0,0.0,1,3,3,2,0,0,3,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 19.821996,1.653431,75.090439,2.766036,2.443812,2.707927,0.702839,0.827439,1,0,1,1,2,0,3,1,1,True,False,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.149706,1.699818,78.0,1.096455,2.491315,2.450069,0.0,0.726118,1,0,1,1,0,0,2,0,1,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-46.491859,1.718097,88.600878,2.129969,3.0,1.568035,0.870127,0.0,1,3,2,2,1,1,0,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 17.894784,1.731389,84.064875,2.019674,2.843319,2.832004,1.0,0.608607,1,0,2,2,1,1,3,1,0,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.88485,1.699667,79.67793,2.735297,2.157164,1.087166,0.110174,0.003695,1,0,1,1,2,0,0,0,0,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 38.384177,1.698626,78.637307,3.0,3.0,2.503198,0.0,0.0,1,3,1,1,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
@@ -1044,7 +1010,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 23.586058,1.700499,81.108599,2.042762,2.9774,1.522426,0.501417,1.029135,1,2,1,1,1,1,0,1,2,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 34.432669,1.694997,84.451423,2.129668,2.693646,2.60669,1.170823,0.290898,1,3,1,2,1,0,3,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 25.472995,1.688911,78.434492,2.182401,2.832018,2.456939,0.038809,0.524015,1,2,1,1,1,1,2,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,False,False,False,True,False
-55.022494,1.673394,80.400306,2.0,3.0,2.0,1.0,0.0,1,3,1,1,0,1,1,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 34.647036,1.769499,85.0,2.802696,3.0,2.978465,1.974656,0.936925,1,3,3,2,2,1,3,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 21.997335,1.65,80.0,2.0,3.0,2.0,0.527341,2.0,1,1,1,1,0,1,1,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 18.181821,1.662669,79.863546,2.492758,2.270163,1.992586,1.452467,0.864583,1,0,1,1,2,0,1,2,1,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
@@ -1064,7 +1029,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 18.741188,1.556789,71.788181,3.0,3.129155,2.0,1.634134,1.0,1,0,0,1,2,2,1,2,1,True,False,False,True,True,False,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 19.955257,1.5891,72.713611,3.0,3.856434,2.0,1.32417,1.0,1,1,0,1,2,2,1,2,1,True,False,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.684891,1.700627,78.048207,1.653081,2.753418,2.192063,1.474937,0.518542,1,0,1,1,0,1,2,2,0,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-47.7061,1.743935,84.729197,2.535315,3.0,1.146595,0.31381,0.0,1,3,2,2,2,1,0,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 17.997009,1.742654,85.0,2.0,3.0,2.976229,1.0,0.121992,1,0,2,2,0,1,3,1,0,False,True,False,True,True,False,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 17.971786,1.754441,85.002884,2.765769,3.0,2.845134,1.0,0.42683,1,0,2,2,2,1,3,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.432717,1.719342,80.790813,2.215464,2.116195,1.80996,1.910577,0.971746,1,1,2,1,1,0,1,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
@@ -1094,8 +1058,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 23.807181,1.729177,82.52724,2.742796,2.937607,1.99467,1.0,0.023564,1,2,2,1,2,1,1,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 39.585811,1.719153,86.464843,2.325623,1.313403,1.94609,0.604259,0.0,1,3,2,2,1,0,1,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 45.821267,1.687326,80.413997,2.076689,3.0,1.026729,0.647798,0.0,1,3,1,1,1,1,0,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
-25.929746,1.772449,105.0,3.0,3.0,2.045069,1.725931,1.619596,1,2,3,2,2,1,2,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-26.042738,1.837117,105.712219,3.0,3.0,2.509147,2.0,1.564796,1,3,3,2,2,1,3,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 30.551762,1.784377,102.872505,2.271306,3.0,1.771198,2.0,0.413752,1,3,3,2,1,1,1,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 31.386405,1.556579,78.233341,2.13683,2.092179,1.505381,0.0,0.0,1,3,0,1,1,0,0,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.706285,1.585547,80.351263,2.0,1.0,2.0,0.0,0.0,1,2,0,1,0,0,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1111,12 +1073,10 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 23.252906,1.775815,97.813023,2.0,3.0,3.0,3.0,2.0,1,2,3,2,0,1,3,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 22.025438,1.640426,87.344156,3.0,1.0,3.0,1.280924,1.77795,1,1,1,2,2,0,3,2,2,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 18.086772,1.65,82.13682,3.0,3.0,1.0,1.02975,1.350099,1,0,1,1,2,1,0,2,2,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.994393,1.753321,107.998815,3.0,3.0,1.776991,1.757724,0.0,1,2,2,2,2,1,1,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 40.821515,1.553026,77.74518,2.0,3.0,1.406115,0.0,0.0,1,3,0,1,0,1,0,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 23.0,1.706525,90.500055,2.0,3.0,1.530493,0.967627,1.0,1,2,2,2,0,1,0,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 31.315593,1.673352,90.0,2.19011,2.029858,2.348981,1.946907,0.0,1,3,1,2,1,0,2,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 22.661556,1.660324,94.189167,2.0,3.0,2.0,0.0,0.105936,1,1,1,2,0,1,1,0,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-40.317787,1.786318,98.447311,2.0,3.0,2.680292,1.549693,0.522259,1,3,3,2,0,1,3,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 23.365649,1.757691,95.361795,2.0,3.0,3.0,3.0,2.0,1,2,2,2,0,1,3,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 21.72127,1.712163,98.699971,2.0,2.977543,2.205977,2.698874,2.0,1,1,2,2,0,1,2,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 35.389491,1.78,100.84763,2.069267,1.476204,3.0,2.05252,0.092736,1,3,3,2,1,0,3,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,True,False,False,False,False
@@ -1131,7 +1091,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 21.669478,1.75,96.940255,2.0,3.0,2.771469,2.359339,1.206251,1,1,2,2,0,1,3,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 23.0,1.615854,80.615325,2.0,1.0,2.0,0.026142,0.0,1,2,0,1,0,0,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 20.825962,1.793378,105.655037,2.0,3.0,1.155384,0.003938,0.526999,1,1,3,2,0,1,0,0,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-18.178023,1.85478,114.77484,2.0,1.854536,2.160169,1.0,2.0,1,0,3,3,0,0,2,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.0,1.685633,90.032671,2.496455,3.0,1.850344,1.066101,0.732265,1,0,1,2,2,1,1,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.267696,1.706343,93.348843,1.70825,3.0,1.0,0.899864,1.0,1,0,2,2,0,1,0,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 23.0,1.791415,105.138073,2.262171,3.0,2.03415,0.317363,0.508663,1,2,3,2,1,1,2,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1161,8 +1120,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 19.089595,1.700164,99.204695,2.0,2.119826,2.0,0.0,1.882539,1,0,1,2,0,0,1,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 18.312665,1.60074,82.249831,2.501236,3.0,1.220331,0.245003,0.537202,1,0,0,1,2,1,0,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 18.260079,1.801848,104.741914,2.0,3.0,3.0,1.783858,0.0,1,0,3,2,0,1,3,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-26.004294,1.844751,105.025808,3.0,3.0,2.925029,2.0,1.758865,1,3,3,2,2,1,3,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.994746,1.811602,106.042142,3.0,3.0,2.858171,1.813318,0.680215,1,2,3,2,2,1,3,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 36.726617,1.787521,100.624553,2.031185,2.992606,2.852254,2.00123,0.36037,1,3,3,2,1,1,3,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,True,False,False,False,False
 38.297259,1.789109,100.066268,2.014194,2.050121,2.184707,2.000561,0.853891,1,3,3,2,1,0,2,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,True,False,False,False,False
 30.163408,1.533364,78.030383,2.028225,1.923607,1.798917,0.0,0.0,1,3,0,1,1,0,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
@@ -1185,7 +1142,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 22.591026,1.650012,87.676154,2.983851,1.068443,2.854161,1.103209,1.0,1,1,1,2,2,0,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 16.129279,1.65,85.583485,2.954996,3.0,1.0,2.091862,1.06053,1,0,1,2,2,1,0,3,2,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 16.913841,1.634832,85.803809,2.061969,3.0,1.229171,2.392047,1.256119,1,0,1,2,1,1,0,3,2,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-29.43879,1.770126,108.602715,3.0,3.0,1.163264,1.866023,1.604608,1,3,3,3,2,1,0,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 29.881301,1.758189,108.721893,3.0,3.0,1.271178,1.944728,0.0,1,3,2,3,2,1,0,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 43.591999,1.595165,77.354744,2.0,3.0,2.117346,0.0,0.0,1,3,0,1,0,1,2,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 40.993179,1.567756,79.493626,2.0,3.0,2.952506,0.0,0.0,1,3,0,1,0,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
@@ -1229,8 +1185,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 18.166318,1.649553,82.323954,2.864776,3.0,1.876915,0.631565,0.186414,1,0,1,1,2,1,1,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 22.352025,1.754711,105.000706,2.871137,3.0,2.627569,1.0,0.0,1,1,2,2,2,1,3,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 22.469351,1.762515,105.000097,2.282803,3.0,2.104264,1.0,0.0,1,1,2,2,1,1,2,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-19.524698,1.942725,121.657979,2.0,3.0,3.0,1.0,1.014808,1,0,3,3,0,1,3,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-20.491475,1.975663,120.702935,2.0,3.0,3.0,0.767013,1.0,1,1,3,3,0,1,3,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 39.213399,1.586301,80.0,2.020502,1.237454,1.93142,1.967973,0.0,1,3,0,1,1,0,1,3,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 38.098745,1.598448,80.0,2.020785,1.169173,1.972551,1.903338,0.0,1,3,0,1,1,0,1,3,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 19.034033,1.703098,98.296651,2.0,2.391753,2.0,0.0,1.119877,1,0,2,2,0,0,1,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
@@ -1253,10 +1207,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 18.063582,1.633675,82.459577,2.921576,3.0,1.003636,1.000227,0.905596,1,0,1,1,2,1,0,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 20.418832,1.836669,105.257543,2.0,3.0,2.793505,2.21939,0.202902,1,1,3,2,0,1,3,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 20.580984,1.798354,103.705418,2.0,3.0,2.401315,2.891986,0.0,1,1,3,2,0,1,2,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-26.032416,1.824432,105.131956,3.0,3.0,2.110611,1.890907,1.58483,1,3,3,2,2,1,2,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.955361,1.830384,105.479313,3.0,3.0,2.480277,1.796779,1.596562,1,2,3,2,2,1,3,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-26.015448,1.829907,105.436173,3.0,3.0,2.224914,1.781589,1.59405,1,3,3,2,2,1,2,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.920738,1.823755,105.800158,2.92711,3.0,2.151496,1.166064,1.509831,1,2,3,2,2,1,2,2,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 29.633715,1.834842,105.19936,2.805533,3.0,1.882847,2.0,0.70778,1,3,3,2,2,1,1,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 32.895637,1.783901,103.771371,2.902469,1.734762,2.600238,2.113992,0.584755,1,3,3,2,2,0,3,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 39.685846,1.781032,96.303855,2.252698,2.475228,2.923856,2.165429,0.616045,1,3,3,2,1,0,3,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,True,False,False,True,False,False,False,False
@@ -1289,8 +1239,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 21.3928,1.641149,88.079177,2.607747,1.000414,3.0,1.269169,1.460564,1,1,1,2,2,0,3,2,2,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 18.178076,1.642892,82.144405,2.66889,3.0,1.172593,0.886448,1.252677,1,0,1,1,2,1,0,1,2,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 18.907514,1.65,82.01831,3.0,3.0,1.0,0.215187,1.195929,1,0,1,1,2,1,0,1,2,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-26.011928,1.777251,106.452367,3.0,3.0,1.911379,1.911096,1.032392,1,3,3,2,2,1,1,3,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.696736,1.814696,107.55963,2.921225,3.0,2.869439,0.181753,0.133523,1,2,3,2,2,1,3,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 40.466313,1.559005,77.601483,2.0,3.0,1.572371,0.0,0.0,1,3,0,1,0,1,0,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 38.445148,1.556028,77.684229,2.0,3.0,1.440629,0.0,0.0,1,3,0,1,0,1,0,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 24.473062,1.653751,91.204753,1.492834,3.0,1.005367,0.922739,0.733221,1,2,1,2,0,1,0,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
@@ -1367,7 +1315,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 18.0,1.782722,108.044313,2.0,2.655265,2.297896,1.0,0.552665,1,0,3,3,0,0,2,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 18.0,1.797523,108.316462,2.0,1.941307,2.708168,1.0,1.425852,1,0,3,3,0,0,3,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 18.0,1.803527,108.251044,2.0,1.709546,2.530157,1.0,0.6454,1,0,3,3,0,0,3,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-29.409825,1.801224,108.15619,2.385502,2.883984,2.140544,1.144876,1.767468,1,3,3,3,1,1,2,2,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 28.421533,1.829239,107.10819,2.465575,2.935381,2.480555,1.00183,1.670313,1,3,3,2,2,1,3,2,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 18.0,1.692913,89.93889,2.818502,3.0,1.991251,1.492967,0.0,1,0,1,2,2,1,1,2,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 18.0,1.668555,85.607466,2.081238,3.0,1.18363,1.17177,0.0,1,0,1,2,1,1,0,2,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
@@ -1421,14 +1368,12 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 30.62865,1.766975,118.363376,2.964319,3.0,2.377257,0.614959,1.875023,1,3,2,3,2,1,2,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 23.454558,1.754218,117.384745,1.617093,3.0,2.0,1.818052,0.631825,1,2,2,3,0,1,1,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 23.432227,1.754996,119.087557,1.631144,3.0,2.0,1.593183,0.86374,1,2,2,3,0,1,1,2,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-40.50021,1.748103,108.308112,2.317459,3.734323,1.0,1.628637,0.0,1,3,2,3,1,2,0,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 34.576714,1.73325,103.669116,2.501224,2.049565,1.0,1.746583,0.0,1,3,2,2,2,0,0,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 22.276969,1.84995,121.786485,3.0,2.272214,1.555534,0.348839,0.0,1,1,3,3,2,0,0,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.963787,1.849601,122.333425,3.0,2.218285,1.340117,0.428259,0.0,1,1,3,3,2,0,0,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 24.001685,1.606066,99.961731,3.0,1.418833,1.0,1.19102,1.384186,1,2,0,2,2,0,0,2,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 20.027764,1.611434,103.175516,2.983042,1.109956,1.430444,0.0,1.690901,1,1,0,2,2,0,0,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 28.704462,1.762887,113.90198,2.323351,3.0,2.165048,0.0,1.493716,1,3,2,3,1,1,2,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
-26.774115,1.755938,112.287678,1.428289,3.0,2.117733,0.485322,0.696948,1,3,2,3,0,1,2,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 25.539411,1.787052,115.428276,1.992889,3.0,2.141271,1.121038,0.0,1,2,3,3,0,1,2,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.300208,1.765258,114.330023,1.562804,3.0,2.075493,1.553734,0.000436,1,2,2,3,0,1,2,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 31.194458,1.726279,110.714711,1.794825,3.914454,1.972016,0.668963,0.0,1,3,2,3,0,2,1,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
@@ -1446,7 +1391,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 25.883749,1.767077,114.133149,2.225731,3.0,2.154326,1.266866,0.390178,1,2,2,3,1,1,2,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.486521,1.762461,115.531622,2.178308,3.0,2.165804,1.420675,1.875683,1,2,2,3,1,1,2,2,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 29.883021,1.779049,112.438508,2.065752,3.0,2.078297,0.0,0.677354,1,3,3,3,1,1,2,0,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
-26.957645,1.780731,112.957922,2.263245,3.0,2.092509,0.0,1.836853,1,3,3,3,1,1,2,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 26.490926,1.872517,120.898397,2.443538,3.0,2.939492,1.208142,0.738935,1,3,3,3,2,1,3,2,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 27.558801,1.801224,119.050381,2.744994,3.0,2.478838,0.684487,0.677909,1,3,3,3,2,1,3,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 22.908879,1.876898,121.277832,2.630137,2.806298,1.970508,1.304291,0.0,1,2,3,3,2,1,1,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1461,7 +1405,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 25.100513,1.830596,118.424156,1.455602,3.0,2.363307,1.144683,0.101026,1,2,3,3,0,1,2,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 38.523646,1.765836,118.533246,2.177896,2.987652,1.745095,0.656548,0.0,1,3,2,3,1,1,1,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 38.71216,1.770278,117.29188,2.252382,2.842848,1.879381,0.919388,0.0,1,3,3,3,1,1,1,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
-25.717522,1.673491,103.706181,2.668949,1.134321,1.279443,0.11243,1.135503,1,2,1,2,2,0,0,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 32.259623,1.703346,102.686239,2.723953,1.924168,1.0,1.622055,0.069367,1,3,2,2,2,0,0,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 23.47007,1.842906,121.142535,3.0,2.701689,2.738485,0.992253,0.0,1,2,3,3,2,1,3,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 24.408805,1.779547,118.740035,2.736298,2.992903,2.045561,0.854957,0.428452,1,2,3,3,2,1,2,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1470,7 +1413,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 24.007488,1.617655,100.941357,2.871016,1.834472,1.016585,0.236168,0.974939,1,2,0,2,2,0,0,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 30.686701,1.644517,100.004418,2.96405,2.123138,1.0,1.699181,0.620465,1,3,1,2,2,0,0,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 20.184451,1.701284,104.578255,2.653721,1.265463,1.368457,0.218356,0.768071,1,1,1,2,2,0,0,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-25.447208,1.65891,104.548794,2.859097,1.340361,1.530508,0.174475,1.261705,1,2,1,2,2,0,0,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 30.002029,1.759324,112.000381,1.572036,3.0,2.003563,0.0,0.340196,1,3,2,3,0,1,2,0,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 30.188303,1.758382,112.10074,1.387489,3.0,2.017712,0.0,0.731257,1,3,2,3,0,1,2,0,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 24.244029,1.622297,99.982541,2.941929,3.989492,1.014135,1.958694,0.687342,1,2,0,2,2,2,0,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
@@ -1497,7 +1439,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 29.246269,1.758038,112.395309,2.323003,3.0,2.155558,0.0,1.251554,1,3,2,3,1,1,2,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 25.341399,1.786997,115.025361,1.99953,3.0,2.111908,1.453042,0.849503,1,2,3,3,0,1,2,2,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.314163,1.771837,114.906095,1.585183,3.0,2.101841,1.543961,7.3e-05,1,2,3,3,0,1,2,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-40.366238,1.722396,109.349025,2.281963,3.770379,1.0,1.330519,0.0,1,3,2,3,1,2,0,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 33.749594,1.701387,107.025415,2.561638,2.87747,1.0,1.980401,0.0,1,3,1,2,2,1,0,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 32.867331,1.697421,103.017623,2.600217,2.175153,1.0,1.985536,0.0,1,3,1,2,2,0,0,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 30.403205,1.696365,102.815983,2.79166,2.13229,1.254589,0.652736,1.040713,1,3,1,2,2,0,0,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
@@ -1512,7 +1453,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 26.050109,1.773115,115.089316,2.392179,3.0,2.16467,1.079934,1.073026,1,3,3,3,1,1,2,2,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.846279,1.772731,115.828167,2.381164,3.0,2.170225,1.211048,1.89933,1,2,3,3,1,1,2,2,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 29.620095,1.787933,112.536367,2.008245,3.0,2.040137,0.0,0.474216,1,3,3,3,1,1,2,0,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
-27.439056,1.785277,112.740797,2.155182,3.0,2.049079,0.0,1.74992,1,3,3,3,1,1,2,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 28.493397,1.817572,120.8158,2.969233,3.0,2.807984,0.982134,1.191998,1,3,3,3,2,1,3,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 27.474245,1.84342,120.420406,2.765063,3.0,2.867206,0.706777,0.677909,1,3,3,3,2,1,3,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.036269,1.874519,121.244969,2.630137,3.0,2.960088,1.356468,0.0,1,2,3,3,2,1,3,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1569,8 +1509,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 23.745833,1.756772,117.326523,1.537505,3.0,2.0,1.631912,0.631422,1,2,2,3,0,1,1,2,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 23.327836,1.754439,119.441207,1.893428,3.0,2.0,1.917383,0.93648,1,2,2,3,0,1,1,3,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 23.411141,1.755142,119.192922,2.007845,2.954446,1.968796,1.587406,0.838947,1,2,2,3,1,1,1,2,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-39.825592,1.706741,108.012603,2.487781,3.755976,1.0,1.860765,0.0,1,3,2,2,2,2,0,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
-36.839761,1.74285,106.421042,2.541785,2.902639,1.0,1.668961,0.0,1,3,2,2,2,1,0,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,True,False,False,False,False
 33.789301,1.6811,102.523111,2.813775,2.372705,1.0,1.979355,0.0,1,3,1,2,2,0,0,3,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 34.161998,1.705682,103.067766,2.562687,2.100918,1.458545,1.167856,0.412329,1,3,2,2,2,0,0,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 22.580038,1.849507,121.560938,3.0,2.272801,1.560064,0.79677,0.0,1,1,3,3,2,0,0,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1583,8 +1521,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 23.360307,1.610647,100.642257,2.997524,1.154318,1.238057,1.1293,1.665621,1,2,0,2,2,0,0,2,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 28.986237,1.758618,113.501549,2.320201,3.0,2.164784,0.0,1.465479,1,3,2,3,1,1,2,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 29.713169,1.763259,113.215814,2.181057,3.0,2.08554,0.0,1.439004,1,3,2,3,1,1,2,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
-27.394123,1.764138,112.323213,1.924632,3.0,2.006595,0.1768,0.511694,1,3,2,3,0,1,2,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
-24.912254,1.75596,112.277567,1.397468,3.0,2.01897,0.665439,0.062167,1,2,2,3,0,1,2,1,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 25.526746,1.783381,115.347176,2.191429,3.0,2.102709,1.32534,0.380979,1,2,3,3,1,1,2,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.523127,1.786532,114.534678,2.100177,3.0,2.099687,1.281165,0.247332,1,2,3,3,1,1,2,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.822348,1.766626,114.187096,2.075321,3.0,2.144838,1.501754,0.276319,1,2,2,3,1,1,2,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1619,7 +1555,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 25.758307,1.766547,115.45845,2.203962,3.0,2.15687,1.289421,1.220767,1,2,2,3,1,1,2,2,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 29.981494,1.773181,112.348722,1.947495,3.0,2.042073,0.0,0.618087,1,3,3,3,0,1,2,0,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 29.891473,1.76003,112.409191,2.262292,3.0,2.115354,0.0,0.847587,1,3,2,3,1,1,2,0,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
-26.778684,1.780089,113.15464,2.219186,3.0,2.092326,0.545919,1.74288,1,3,3,3,1,1,2,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 28.377958,1.766946,113.235538,2.314175,3.0,2.151809,0.0,1.578517,1,3,2,3,1,1,2,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,True,False,False,False,False
 26.199321,1.885119,121.065052,2.423291,3.0,2.902682,1.243567,0.555591,1,3,3,3,2,1,3,2,0,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 27.266287,1.828276,120.872294,2.637202,3.0,2.966647,1.159598,0.758897,1,3,3,3,2,1,3,2,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1667,7 +1602,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 30.64243,1.653876,102.583895,2.919526,2.142328,1.175714,0.958555,0.636289,1,3,1,2,2,0,0,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 20.068432,1.657132,105.580491,2.724121,1.437959,1.590418,0.029603,1.122118,1,1,1,2,2,0,0,0,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 20.914366,1.644751,101.067988,2.801992,1.343117,1.128942,0.233987,0.81998,1,1,1,2,2,0,0,1,1,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
-25.512048,1.660761,104.321463,2.748971,1.213431,1.448875,0.128548,1.239038,1,2,1,2,2,0,0,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 26.844812,1.69151,102.59518,2.680375,1.089048,1.366238,0.181324,1.041677,1,3,1,2,2,0,0,1,2,False,True,False,True,False,True,False,False,True,False,True,False,True,False,False,False,False,True,False,False,False,True,False
 25.919241,1.611462,102.093223,3.0,3.0,1.023328,0.05093,1.0,1,2,0,2,2,1,0,0,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.584782,105.055597,3.0,3.0,1.197667,0.0,0.534769,1,2,0,2,2,1,0,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1690,9 +1624,7 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 26.0,1.632377,111.946655,3.0,3.0,2.737091,0.0,0.037078,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.642572,111.868169,3.0,3.0,2.623489,0.0,0.138563,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.96701,1.654875,104.758713,3.0,3.0,2.612758,0.24629,0.802136,1,2,1,2,2,1,3,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-26.0,1.627567,107.482662,3.0,3.0,2.687378,0.0,0.410651,1,2,0,2,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.590046,1.736276,130.927138,3.0,3.0,1.852692,1.46361,0.962336,1,1,2,3,2,1,1,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-24.497373,1.737056,132.527011,3.0,3.0,2.86559,0.973864,0.58345,1,2,2,3,2,1,3,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.991886,1.580968,102.003378,3.0,3.0,1.003563,0.008127,1.0,1,2,0,2,2,1,0,0,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.908431,1.607128,103.026858,3.0,3.0,1.077253,0.162083,0.824607,1,2,0,2,2,1,0,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.177882,1.821566,142.102468,3.0,3.0,2.714949,1.999773,0.813784,1,0,3,3,2,1,3,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1705,7 +1637,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 20.871153,1.690614,129.769141,3.0,3.0,1.154698,1.71836,0.959218,1,1,1,3,2,1,0,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.622418,110.676343,3.0,3.0,2.691584,0.0,0.425473,1,2,0,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.643332,110.824698,3.0,3.0,2.709654,0.0,0.25115,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-21.768834,1.733383,135.524857,3.0,3.0,1.485736,1.950374,0.869238,1,1,2,3,2,1,0,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.891491,1.748313,133.573787,3.0,3.0,2.874336,1.624981,0.825609,1,1,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.941943,1.812963,138.730619,3.0,3.0,2.641489,0.481555,0.735201,1,1,3,3,2,1,3,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.989016,1.80734,155.872093,3.0,3.0,2.417122,0.952725,0.573958,1,1,3,3,2,1,2,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1731,7 +1662,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 26.0,1.610636,105.423532,3.0,3.0,2.180566,0.0,0.519905,1,2,0,2,2,1,2,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.943827,1.629491,104.839068,3.0,3.0,2.20979,0.114698,0.604422,1,2,0,2,2,1,2,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.291974,1.684768,104.821175,3.0,3.0,1.444379,0.224482,0.912187,1,2,1,2,2,1,0,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.653233,1.66494,110.92217,3.0,3.0,1.604075,0.029728,0.200122,1,2,1,3,2,1,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.783865,1.655646,110.21734,3.0,3.0,1.528258,0.01586,0.436068,1,2,1,3,2,1,0,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.17614,1.666194,124.805868,3.0,3.0,1.228838,0.792553,0.639561,1,0,1,3,2,1,0,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.207423,1.707508,121.864326,3.0,3.0,1.615548,1.376534,0.926052,1,1,2,3,2,1,1,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1744,23 +1674,18 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 21.001969,1.736215,132.145549,3.0,3.0,1.657541,1.672639,0.629285,1,1,2,3,2,1,1,2,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.772251,1.732951,132.904884,3.0,3.0,1.817899,1.577824,0.930836,1,1,2,3,2,1,1,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 23.76197,1.69135,114.480696,3.0,3.0,2.509535,0.334264,0.668172,1,2,1,3,2,1,3,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-24.449655,1.635062,113.277388,3.0,3.0,2.578038,0.165422,0.463196,1,2,1,3,2,1,3,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.378203,1.746061,128.261402,3.0,3.0,2.501638,1.546179,0.66488,1,0,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.725718,1.746529,129.363771,3.0,3.0,2.250711,0.64235,0.685129,1,0,2,3,2,1,2,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.344018,1.746516,144.302261,3.0,3.0,2.36651,1.247505,0.723366,1,1,2,3,2,1,2,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.322097,1.751118,149.291106,3.0,3.0,2.309409,1.68291,0.70558,1,1,2,3,2,1,2,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.262934,1.741014,132.57927,3.0,3.0,2.436261,1.464674,0.87092,1,0,2,3,2,1,2,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.566815,1.748533,133.94608,3.0,3.0,2.833566,1.413239,0.862724,1,1,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-24.475242,1.694726,112.776612,3.0,3.0,2.724099,0.336795,0.153462,1,2,1,3,2,1,3,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.612462,1.674515,112.879662,3.0,3.0,2.989389,0.36009,0.169016,1,2,1,3,2,1,3,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.631332,111.829957,3.0,3.0,2.55975,0.0,0.237307,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.641918,111.86899,3.0,3.0,2.635454,0.0,0.088309,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.640125,111.539494,3.0,3.0,2.625537,0.0,0.162494,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.649178,111.914361,3.0,3.0,2.884077,0.0,0.096576,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.96773,1.603404,105.031908,3.0,3.0,1.919473,0.027101,0.546137,1,2,0,2,2,1,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.989938,1.644199,105.036075,3.0,3.0,2.310076,0.07115,0.733085,1,2,1,2,2,1,2,0,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-26.0,1.628909,106.875927,3.0,3.0,2.686824,0.0,0.540812,1,2,0,2,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.617227,1.628019,108.265922,3.0,3.0,1.6213,0.090917,0.438216,1,2,0,3,2,1,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.030909,1.71818,133.466763,3.0,3.0,1.517215,1.486289,0.937492,1,1,2,3,2,1,0,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.951084,1.708581,131.274851,3.0,3.0,1.796956,1.684582,0.887388,1,1,2,3,2,1,1,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 22.980221,1.724983,132.94066,3.0,3.0,2.085553,1.271651,0.587932,1,2,2,3,2,1,2,2,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1768,7 +1693,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 25.999185,1.568543,102.000122,3.0,3.0,1.000544,0.001297,1.0,1,2,0,2,2,1,0,0,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.934757,1.579893,102.134646,3.0,3.0,1.005864,0.02006,0.695838,1,2,0,2,2,1,0,0,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.327723,1.782714,154.618446,3.0,3.0,2.319559,1.97073,0.768375,1,1,3,3,2,1,2,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-19.47219,1.793824,160.935351,3.0,3.0,2.069257,1.986646,0.947091,1,0,3,3,2,1,2,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.659557,111.999096,3.0,3.0,2.956548,0.0,0.010056,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.65782,111.95611,3.0,3.0,2.777557,0.0,0.051858,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.816445,1.684082,104.592372,3.0,3.0,1.295436,0.282063,0.929356,1,2,1,2,2,1,0,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1777,10 +1701,8 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 20.190733,1.680762,125.418548,3.0,3.0,1.124366,0.877067,0.552006,1,1,1,3,2,1,0,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.623303,110.81746,3.0,3.0,2.673754,0.0,0.33929,1,2,0,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.631856,110.804337,3.0,3.0,2.70485,0.0,0.243338,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-21.840654,1.747479,136.516648,3.0,3.0,1.607531,1.963379,0.858392,1,1,2,3,2,1,1,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.871667,1.782453,137.852618,3.0,3.0,2.748909,1.989171,0.832515,1,1,3,3,2,1,3,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.501721,1.809871,152.394739,3.0,3.0,2.351207,0.246831,0.91336,1,1,3,3,2,1,2,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-21.521294,1.803677,160.639405,3.0,3.0,2.404049,0.427905,0.639894,1,1,3,3,2,1,2,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.314593,1.745602,133.554686,3.0,3.0,2.923792,1.536555,0.62535,1,0,2,3,2,1,3,2,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.529746,1.751038,133.843033,3.0,3.0,2.955075,1.46046,0.655558,1,0,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.631547,111.588625,3.0,3.0,2.554007,0.0,0.252635,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1794,7 +1716,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 25.918524,1.621231,104.986792,3.0,3.0,1.653049,0.139159,0.711331,1,2,0,2,2,1,1,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.565662,1.642392,104.988082,3.0,3.0,1.204055,0.094851,0.603736,1,2,1,2,2,1,0,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.744914,1.801983,138.034526,3.0,3.0,2.691591,1.168368,0.735372,1,0,3,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-21.704699,1.787614,137.858254,3.0,3.0,2.531456,1.980738,0.835771,1,1,3,3,2,1,3,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.089969,1.801478,151.417292,3.0,3.0,2.226081,1.881761,0.933964,1,1,3,3,2,1,2,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.120739,1.807576,152.567671,3.0,3.0,2.164718,1.999631,0.941336,1,0,3,3,2,1,2,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.650125,111.939671,3.0,3.0,2.770732,0.0,0.125235,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1823,20 +1744,14 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 20.074449,1.810427,152.217135,3.0,3.0,2.299156,1.699056,0.729722,1,1,3,3,2,1,2,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.904037,1.743589,133.281333,3.0,3.0,2.684819,1.46525,0.804491,1,0,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.783234,1.747962,133.936535,3.0,3.0,2.84174,1.429256,0.775378,1,0,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-24.291205,1.71146,113.372851,3.0,3.0,2.796894,0.382189,0.16779,1,2,2,3,2,1,3,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.311534,1.685482,113.451224,3.0,3.0,2.987718,0.387074,0.283804,1,2,1,3,2,1,3,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.639251,111.927001,3.0,3.0,2.675567,0.0,0.081929,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.654784,111.933152,3.0,3.0,2.770125,0.0,0.088236,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.641209,111.856492,3.0,3.0,2.621877,0.0,0.153669,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.643167,111.894229,3.0,3.0,2.72005,0.0,0.127443,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.966504,1.63073,104.790549,3.0,3.0,2.436097,0.129178,0.683736,1,2,1,2,2,1,2,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.950898,1.649867,104.791035,3.0,3.0,2.535629,0.152713,0.7702,1,2,1,2,2,1,3,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-26.0,1.613574,107.012256,3.0,3.0,2.678779,0.0,0.508848,1,2,0,2,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-26.0,1.627532,106.69053,3.0,3.0,2.569713,0.0,0.396972,1,2,0,2,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.848608,1.726606,131.76807,3.0,3.0,1.759352,1.469928,0.950438,1,1,2,3,2,1,1,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.801791,1.721476,131.042274,3.0,3.0,1.837184,1.525165,0.926443,1,1,2,3,2,1,1,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-23.712641,1.742901,132.8071,3.0,3.0,2.856795,1.046463,0.586163,1,2,2,3,2,1,3,2,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-24.063874,1.737313,133.166595,3.0,3.0,2.846259,1.295759,0.723154,1,2,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.95774,1.62414,102.233445,3.0,3.0,1.067716,0.030541,1.0,1,2,0,2,2,1,0,0,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.909353,1.644078,102.277765,3.0,3.0,1.029241,0.075776,1.0,1,2,1,2,2,1,0,0,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.954995,1.592529,102.874549,3.0,3.0,1.074412,0.006265,0.845633,1,2,0,2,2,1,0,0,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1866,7 +1781,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 21.028989,1.748524,133.878843,3.0,3.0,2.868167,1.48372,0.83509,1,1,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.282238,1.748951,133.662583,3.0,3.0,2.247979,1.609938,0.849236,1,1,2,3,2,1,2,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.388049,1.777971,137.785027,3.0,3.0,2.702789,1.606109,0.731213,1,1,3,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-21.022206,1.73995,135.693381,3.0,3.0,1.663213,1.094035,0.786665,1,1,2,3,2,1,1,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.102241,1.816868,153.959945,3.0,3.0,2.414739,1.917014,0.927982,1,1,3,3,2,1,2,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.291969,1.8002,155.242672,3.0,3.0,2.351193,1.051889,0.686491,1,1,3,3,2,1,2,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.530998,1.74647,133.644711,3.0,3.0,2.896088,1.612741,0.77319,1,1,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1895,8 +1809,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 25.976209,1.614484,104.999403,3.0,3.0,1.237557,0.083675,0.543761,1,2,0,2,2,1,0,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.743587,1.789143,138.202869,3.0,3.0,2.83377,0.806422,0.672513,1,0,3,3,2,1,3,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.323767,1.774207,138.143162,3.0,3.0,2.816052,1.571865,0.688058,1,1,3,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-21.394047,1.792933,137.832414,3.0,3.0,2.682909,1.318743,0.900497,1,1,3,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-21.838323,1.758959,137.79299,3.0,3.0,2.640539,1.879818,0.885993,1,1,2,3,2,1,3,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.20634,1.807406,141.799429,3.0,3.0,2.472903,1.998047,0.840911,1,0,3,3,2,1,3,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.532826,1.75091,142.545183,3.0,3.0,2.372058,1.324805,0.870795,1,0,2,3,2,1,2,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.438478,1.805803,153.149491,3.0,3.0,2.387991,0.850715,0.656491,1,1,3,3,2,1,2,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1913,8 +1825,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 25.982261,1.629225,104.838425,3.0,3.0,2.556068,0.01682,0.58284,1,2,0,2,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.470652,1.680218,104.807284,3.0,3.0,1.423073,0.197993,0.763359,1,2,1,2,2,1,0,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.289428,1.686033,104.772164,3.0,3.0,1.299194,0.234303,0.946888,1,2,1,2,2,1,0,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.696073,1.662978,110.930509,3.0,3.0,1.679489,0.017804,0.21523,1,2,1,3,2,1,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.561868,1.675185,110.621723,3.0,3.0,1.49583,0.109327,0.384129,1,2,1,3,2,1,0,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.834018,1.62456,110.10589,3.0,3.0,1.81786,0.011161,0.447224,1,2,0,3,2,1,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.895546,1.626179,110.074019,3.0,3.0,1.967707,0.01437,0.434073,1,2,0,3,2,1,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 19.035557,1.682594,127.427458,3.0,3.0,1.441289,1.425712,0.662277,1,0,1,3,2,1,0,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1940,7 +1850,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 23.647935,1.681394,114.479459,3.0,3.0,2.435978,0.232742,0.692608,1,2,1,3,2,1,2,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 24.196367,1.697421,114.482386,3.0,3.0,2.909675,0.360908,0.573887,1,2,1,3,2,1,3,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 24.284833,1.650726,113.774198,3.0,3.0,2.75137,0.324913,0.516764,1,2,1,3,2,1,3,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-24.693108,1.667383,112.982549,3.0,3.0,2.887909,0.312923,0.210997,1,2,1,3,2,1,3,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.862264,1.746277,128.705761,3.0,3.0,2.411582,0.985287,0.675076,1,0,2,3,2,1,2,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 18.423482,1.735461,126.798173,3.0,3.0,2.38639,1.544632,0.900067,1,0,2,3,2,1,2,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.394082,1.747714,128.148108,3.0,3.0,2.232601,0.554323,0.836151,1,1,2,3,2,1,2,1,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1953,10 +1862,6 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 18.469086,1.741925,133.017105,3.0,3.0,2.474518,1.560261,0.662489,1,0,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.572114,1.751067,133.845064,3.0,3.0,2.748569,1.427037,0.902825,1,1,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.680123,1.749118,133.955091,3.0,3.0,2.827773,1.412357,0.901071,1,1,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-24.469756,1.663341,113.077187,3.0,3.0,2.632224,0.300964,0.26956,1,2,1,3,2,1,3,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.12791,1.668537,112.555456,3.0,3.0,2.868679,0.115369,0.028583,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.986368,1.668951,112.249699,3.0,3.0,2.930137,0.043101,0.138629,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.951979,1.661712,112.098616,3.0,3.0,2.961899,0.259424,0.080128,1,2,1,3,2,1,3,1,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.633442,111.821817,3.0,3.0,2.550672,0.0,0.224655,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.63302,111.863186,3.0,3.0,2.584305,0.0,0.232108,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 26.0,1.633887,111.878132,3.0,3.0,2.621976,0.0,0.123861,1,2,1,3,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
@@ -1969,15 +1874,10 @@ Age,Height,Weight,FCVC,NCP,CH2O,FAF,TUE,NObeyesdad,Age_equal_depth,Height_equal_
 25.955014,1.626449,104.879602,3.0,3.0,2.094901,0.07089,0.599441,1,2,0,2,2,1,2,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.996716,1.62658,105.037203,3.0,3.0,2.347322,0.008013,0.503896,1,2,0,2,2,1,2,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 25.992348,1.606474,104.954291,3.0,3.0,2.331123,0.063383,0.561661,1,2,0,2,2,1,2,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.974446,1.628855,108.090006,3.0,3.0,1.757105,0.085119,0.465444,1,2,0,3,2,1,1,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.777565,1.628205,107.378702,3.0,3.0,2.506631,0.025787,0.484165,1,2,0,2,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.722004,1.62847,107.218949,3.0,3.0,2.48707,0.067329,0.455823,1,2,0,2,2,1,3,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-25.765628,1.627839,108.10736,3.0,3.0,2.320068,0.045246,0.413106,1,2,0,3,2,1,2,0,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.016849,1.724268,133.033523,3.0,3.0,1.650612,1.537639,0.912457,1,1,2,3,2,1,1,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.682367,1.732383,133.043941,3.0,3.0,1.610768,1.510398,0.931455,1,1,2,3,2,1,1,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.285965,1.72692,131.335786,3.0,3.0,1.796267,1.728332,0.897924,1,1,2,3,2,1,1,3,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 20.976842,1.71073,131.408528,3.0,3.0,1.728139,1.676269,0.906247,1,1,2,3,2,1,1,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 21.982942,1.748584,133.742943,3.0,3.0,2.00513,1.34139,0.59927,1,1,2,3,2,1,2,2,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 22.524036,1.752206,133.689352,3.0,3.0,2.054193,1.414209,0.646288,1,1,2,3,2,1,2,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
-24.361936,1.73945,133.346641,3.0,3.0,2.852339,1.139107,0.586035,1,2,2,3,2,1,3,2,0,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False
 23.664709,1.738836,133.472641,3.0,3.0,2.863513,1.026452,0.714137,1,2,2,3,2,1,3,2,1,True,False,False,True,False,True,False,False,True,False,True,False,True,False,False,False,True,False,False,False,False,True,False

@@ -324,28 +324,37 @@ print(data['Outlier_ISO'].value_counts())
 data = data[data['Outlier_ISO'] == 1].drop(columns=['Outlier_ISO'])
 data.to_csv('cleaned_data.csv', index=False)
 
-# LOF
-# Step 1: Fit the LOF model
-lof = LocalOutlierFactor(n_neighbors=20, contamination=0.05)  # 5% of data considered outliers
-outlier_labels = lof.fit_predict(X)  # -1 indicates an outlier, 1 indicates inlier
-outlier_scores = -lof.negative_outlier_factor_  # Higher scores mean more likely to be an outlier
+# ---- LOF ------
+# Extract numerical data for LOF
+X = data[numerical_columns]
 
-# Step 2: Visualize Outliers
+# Apply Local Outlier Factor
+lof = LocalOutlierFactor(n_neighbors=20, contamination=0.05)
+outlier_labels = lof.fit_predict(X)
+
+# Add outlier labels to the dataframe
+data['Outlier_LOF'] = outlier_labels
+
+# Visualize the results using a scatter plot
 plt.figure(figsize=(10, 6))
-scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=outlier_labels, cmap='coolwarm', s=50, alpha=0.7)
-plt.title("Local Outlier Factor (LOF) - Outlier Detection")
-plt.xlabel('PCA Component 1')
-plt.ylabel('PCA Component 2')
-plt.colorbar(scatter)
+sns.scatterplot(data=data, x='Age', y='Weight', hue='Outlier_LOF', palette='coolwarm')
+plt.title("Outlier Detection using Local Outlier Factor")
+plt.xlabel("Age")
+plt.ylabel("Weight")
+plt.legend(title="Outlier")
 plt.show()
 
-# Step 3: Count Outliers
+# Count and display the number of outliers detected
 n_outliers = sum(outlier_labels == -1)
 print(f"Local Outlier Factor detected {n_outliers} outliers out of {X.shape[0]} samples.")
 
-# Optional: Filter out outliers for further analysis
-cleaned_data = data[outlier_labels == 1]  # Retain only inliers
+# Filter outliers if needed
+cleaned_data = data[data['Outlier_LOF'] == 1].drop(columns=['Outlier_LOF'])
 print(f"Remaining data after outlier removal: {cleaned_data.shape}")
+
+# Save cleaned data if necessary
+cleaned_data.to_csv('cleaned_data.csv', index=False)
+
 
 
 
