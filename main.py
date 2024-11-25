@@ -20,6 +20,8 @@ from sklearn.metrics import (accuracy_score, precision_score, recall_score, f1_s
                              confusion_matrix, roc_curve, ConfusionMatrixDisplay)
 from sklearn.feature_selection import mutual_info_classif
 from sklearn.feature_selection import RFE
+from sklearn.neighbors import NearestNeighbors
+
 
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
@@ -168,47 +170,69 @@ results_df = pd.DataFrame({
 print(results_df)
 
 # DBSCAN clustering
-# dbscan_silhouette_scores = []
-# dbscan_calinski_scores = []
-# dbscan_davies_scores = []
-# dbscan_eps_values = []
+# Analyze kNN distances for estimating optimal eps
+neighbors = NearestNeighbors(n_neighbors=10) 
+neighbors_fit = neighbors.fit(X)
+distances, _ = neighbors_fit.kneighbors(X)
+distances = np.sort(distances[:, -1])  
 
-# def plot_dbscan_clusters(X, labels, eps):
-#     plt.figure(figsize=(10, 6))
-#     scatter = plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', s=50, alpha=0.7)
-#     plt.title(f"DBSCAN Clustering (eps={eps})")
-#     plt.xlabel('PCA Component 1')
-#     plt.ylabel('PCA Component 2')
-#     plt.colorbar(scatter)
-#     plt.show()
+# Plot kNN distances
+plt.figure(figsize=(10, 6))
+plt.plot(distances)
+plt.title("kNN Distance Plot")
+plt.xlabel("Points Sorted by Distance")
+plt.ylabel("Distance to 10th Nearest Neighbor")
+plt.grid(True)
+plt.show()
 
-# for eps in eps_values:
-#     dbscan = DBSCAN(eps=eps, min_samples=10)
-#     labels = dbscan.fit_predict(X)
+eps_values = [4.0, 4.2, 4.5, 4.8, 5.0] # Adjust this based on kNN plot
+min_samples = 10  
+dbscan_results = []
 
-#     # Skip evaluation if all points are classified as noise (-1)
-#     if len(set(labels)) <= 1:
-#         continue
+for eps in eps_values:
+    dbscan = DBSCAN(eps=eps, min_samples=min_samples)
+    labels = dbscan.fit_predict(X)
 
-#     # Evaluate the clustering performance
-#     silhouette = silhouette_score(X, labels)
-#     calinski = calinski_harabasz_score(X, labels)
-#     davies = davies_bouldin_score(X, labels)
+    num_clusters = len(set(labels)) - (1 if -1 in labels else 0)
 
-#     dbscan_silhouette_scores.append(silhouette)
-#     dbscan_calinski_scores.append(calinski)
-#     dbscan_davies_scores.append(davies)
-#     dbscan_eps_values.append(eps)
-#     plot_dbscan_clusters(X_pca, labels, eps)
+    if num_clusters <= 1:
+        print(f"DBSCAN skipped for eps={eps} (all points classified as noise).")
+        dbscan_results.append({
+            'Eps': eps,
+            'Min Samples': min_samples,
+            'Clusters': num_clusters,
+            'Silhouette Score': None,
+            'Calinski-Harabasz Index': None,
+            'Davies-Bouldin Index': None
+        })
+        continue
 
-# dbscan_results_df = pd.DataFrame({
-#     'Eps Value': dbscan_eps_values,
-#     'Silhouette Score': dbscan_silhouette_scores,
-#     'Calinski-Harabasz Index': dbscan_calinski_scores,
-#     'Davies-Bouldin Index': dbscan_davies_scores
-# })
+    silhouette = silhouette_score(X, labels)
+    calinski = calinski_harabasz_score(X, labels)
+    davies = davies_bouldin_score(X, labels)
 
-# print(dbscan_results_df)
+    dbscan_results.append({
+        'Eps': eps,
+        'Min Samples': min_samples,
+        'Clusters': num_clusters,
+        'Silhouette Score': silhouette,
+        'Calinski-Harabasz Index': calinski,
+        'Davies-Bouldin Index': davies
+    })
+
+    plt.figure(figsize=(10, 6))
+    scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', s=50, alpha=0.7)
+    plt.title(f"DBSCAN Clustering (eps={eps}, min_samples={min_samples})")
+    plt.xlabel('PCA Component 1')
+    plt.ylabel('PCA Component 2')
+    plt.colorbar(scatter)
+    plt.grid(True)
+    plt.show()
+
+dbscan_results_df = pd.DataFrame(dbscan_results)
+print("DBSCAN Tuning Results:")
+print(dbscan_results_df)
+
 
 
 # Hierarchical Clustering
