@@ -22,7 +22,6 @@ from sklearn.feature_selection import mutual_info_classif
 from sklearn.feature_selection import RFE
 from sklearn.neighbors import NearestNeighbors
 
-
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -396,64 +395,70 @@ print("Selected Features by Mutual Information:", selected_features_mi)
 
 
 # ----------------------------------------Classification-------------------------------------------
-# KNN classification
-# ------------------------- Dataset Splitting -------------------------
-X_selected = data[selected_features_mi]
-y = data['NObeyesdad']
 
-# Split the dataset into training (80%) and testing (20%) sets
-X_train, X_test, y_train, y_test = train_test_split(X_selected, y, test_size=0.2, random_state=42, stratify=y)
+# # ------------------------------------KNN classification----------------------------------------
+# # Dataset Splitting
+# X_selected = data[selected_features_mi]
+# y = data['NObeyesdad']
 
-# ------------------------- Train k-NN Classifier -------------------------
-knn = KNeighborsClassifier(n_neighbors=5)
-cv_scores = cross_val_score(knn, X_train, y_train, cv=5, scoring='accuracy')
-print("Cross-Validation Scores:", cv_scores)
-print("Mean Cross-Validation Accuracy:", cv_scores.mean())
+# # Split the dataset into training (80%) and testing (20%) sets
+# X_train, X_test, y_train, y_test = train_test_split(X_selected, y, test_size=0.2, random_state=42, stratify=y)
 
-# Train the k-NN model on the training set
-knn.fit(X_train, y_train)
+# # Train k-NN Classifier
+# knn = KNeighborsClassifier(n_neighbors=5)
+# cv_scores = cross_val_score(knn, X_train, y_train, cv=5, scoring='accuracy')
+# print("Cross-Validation Scores:", cv_scores)
+# print("Mean Cross-Validation Accuracy:", cv_scores.mean())
 
-# ------------------------- Make Predictions -------------------------
-# Predict on the test set
-y_pred = knn.predict(X_test)
-y_proba = knn.predict_proba(X_test)[:, 1] if len(set(y)) == 2 else None  # Use probabilities for binary classification
+# # Train the k-NN model on the training set
+# knn.fit(X_train, y_train)
 
-# ------------------------- Evaluate the Model -------------------------
-accuracy = accuracy_score(y_test, y_pred)
-precision = precision_score(y_test, y_pred, average='weighted')
-recall = recall_score(y_test, y_pred, average='weighted')
-f1 = f1_score(y_test, y_pred, average='weighted')
+# # Make Predictions 
+# # Predict on the test set
+# y_pred = knn.predict(X_test)
+# y_proba = knn.predict_proba(X_test)[:, 1] if len(set(y)) == 2 else None  # Use probabilities for binary classification
 
-print("\nModel Evaluation Metrics:")
-print(f"Accuracy: {accuracy:.4f}")
-print(f"Precision: {precision:.4f}")
-print(f"Recall: {recall:.4f}")
-print(f"F1-Score: {f1:.4f}")
+# # Evaluate the Model
+# accuracy = accuracy_score(y_test, y_pred)
+# precision = precision_score(y_test, y_pred, average='weighted')
+# recall = recall_score(y_test, y_pred, average='weighted')
+# f1 = f1_score(y_test, y_pred, average='weighted')
 
-# Calculate AUC-ROC if binary classification
-if y_proba is not None:
-    auc = roc_auc_score(y_test, y_proba)
-    print(f"AUC-ROC: {auc:.4f}")
+# print("\nModel Evaluation Metrics:")
+# print(f"Accuracy: {accuracy:.4f}")
+# print(f"Precision: {precision:.4f}")
+# print(f"Recall: {recall:.4f}")
+# print(f"F1-Score: {f1:.4f}")
 
-# ------------------------- Visualization -------------------------
-# Confusion Matrix
-cm = confusion_matrix(y_test, y_pred)
-disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=knn.classes_)
-disp.plot(cmap=plt.cm.Blues)
-plt.title("Confusion Matrix")
-plt.show()
+# # Calculate AUC-ROC if binary classification
+# if y_proba is not None:
+#     auc = roc_auc_score(y_test, y_proba)
+#     print(f"AUC-ROC: {auc:.4f}")
 
-# ROC Curve (for binary classification)
-if y_proba is not None:
-    fpr, tpr, _ = roc_curve(y_test, y_proba)
-    plt.figure(figsize=(10, 6))
-    plt.plot(fpr, tpr, label="ROC Curve")
-    plt.plot([0, 1], [0, 1], linestyle='--', color='red', label="Random Chance")
-    plt.xlabel("False Positive Rate")
-    plt.ylabel("True Positive Rate")
-    plt.title("ROC Curve")
-    plt.legend()
-    plt.show()
+# # Visualization 
+# # Confusion Matrix
+# cm = confusion_matrix(y_test, y_pred)
+# disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=knn.classes_)
+# disp.plot(cmap=plt.cm.Blues)
+# plt.title("Confusion Matrix")
+# plt.show()
+
+# # ROC Curve (for binary classification)
+# if y_proba is not None:
+#     fpr, tpr, _ = roc_curve(y_test, y_proba)
+#     plt.figure(figsize=(10, 6))
+#     plt.plot(fpr, tpr, label="ROC Curve")
+#     plt.plot([0, 1], [0, 1], linestyle='--', color='red', label="Random Chance")
+#     plt.xlabel("False Positive Rate")
+#     plt.ylabel("True Positive Rate")
+#     plt.title("ROC Curve")
+#     plt.legend()
+#     plt.show()
+
+
+
+
+# ---------------------------Random forrest classification-----------------------------------
 
 # X = data.drop(columns=['NObeyesdad'])
 # print(X.info)
@@ -545,57 +550,112 @@ if y_proba is not None:
 
 # print(f"Best Classifier: {best_classifier}\nBest Accuracy Score: {best_score:.4f}")
 
-# ----------------------------------------Hyperparameter Tuning-------------------------------------------
-# KNN classifier after tuning
-# Define the parameter grid
-param_grid = {
-    'n_neighbors': [3, 5, 7, 9, 11],
-    'weights': ['uniform', 'distance'],
-    'metric': ['euclidean', 'manhattan', 'minkowski']
-}
 
-# Perform Grid Search
-grid_search = GridSearchCV(estimator=KNeighborsClassifier(), param_grid=param_grid, cv=5, scoring='accuracy', n_jobs=-1)
-grid_search.fit(X_train, y_train)
 
-# Best parameters and cross-validation accuracy
-print("\nBest Parameters from Grid Search:", grid_search.best_params_)
-print("Best Cross-Validation Accuracy from Grid Search:", grid_search.best_score_)
+# ----------------------------------------SVM classification-----------------------------------------------
 
-# ----------------------------------- Tuned k-NN Model -----------------------------------
-# Use the best model from Grid Search
-best_knn = grid_search.best_estimator_
+X_selected = data[selected_features_mi]
+y = data['NObeyesdad']
 
-# Evaluate the tuned model
-y_pred_tuned = best_knn.predict(X_test)
-accuracy_tuned = accuracy_score(y_test, y_pred_tuned)
-precision_tuned = precision_score(y_test, y_pred_tuned, average='weighted')
-recall_tuned = recall_score(y_test, y_pred_tuned, average='weighted')
-f1_tuned = f1_score(y_test, y_pred_tuned, average='weighted')
+# Split the dataset into training and testing sets (80% training, 20% testing)
+X_train, X_test, y_train, y_test = train_test_split(X_selected, y, test_size=0.2, random_state=42, stratify=y)
 
-print("\nTuned Model Evaluation Metrics:")
-print(f"Accuracy: {accuracy_tuned:.4f}")
-print(f"Precision: {precision_tuned:.4f}")
-print(f"Recall: {recall_tuned:.4f}")
-print(f"F1-Score: {f1_tuned:.4f}")
+svm_classifier = SVC(kernel='rbf', probability=True, random_state=42)
 
-# ----------------------------------- Visualization -----------------------------------
-# Confusion Matrix
-cm = confusion_matrix(y_test, y_pred_tuned)
-disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=best_knn.classes_)
-disp.plot(cmap=plt.cm.Blues)
-plt.title("Confusion Matrix (Tuned Model)")
+# Perform 5-fold cross-validation
+cv = KFold(n_splits=5, shuffle=True, random_state=42)
+cv_scores = cross_val_score(svm_classifier, X_train, y_train, cv=cv, scoring='accuracy')
+print(f"Cross-Validation Scores: {cv_scores}")
+print(f"Mean Cross-Validation Score: {cv_scores.mean()}")
+
+svm_classifier.fit(X_train, y_train)
+
+y_pred = svm_classifier.predict(X_test)
+y_pred_proba = svm_classifier.predict_proba(X_test)[:, 1]  # Probability scores for the positive class
+
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+f1 = f1_score(y_test, y_pred)
+roc_auc = roc_auc_score(y_test, y_pred_proba)
+
+print(f"Accuracy: {accuracy}")
+print(f"Precision: {precision}")
+print(f"Recall: {recall}")
+print(f"F1 Score: {f1}")
+print(f"AUC-ROC: {roc_auc}")
+
+# Plot confusion matrix
+conf_matrix = confusion_matrix(y_test, y_pred)
+disp = ConfusionMatrixDisplay(confusion_matrix=conf_matrix, display_labels=svm_classifier.classes_)
+disp.plot(cmap='Blues')
+plt.title("Confusion Matrix")
 plt.show()
 
-# ROC Curve (for binary classification)
-if len(set(y)) == 2:
-    y_proba_tuned = best_knn.predict_proba(X_test)[:, 1]
-    fpr, tpr, _ = roc_curve(y_test, y_proba_tuned)
-    plt.figure(figsize=(10, 6))
-    plt.plot(fpr, tpr, label="ROC Curve (Tuned)")
-    plt.plot([0, 1], [0, 1], linestyle='--', color='red', label="Random Chance")
-    plt.xlabel("False Positive Rate")
-    plt.ylabel("True Positive Rate")
-    plt.title("ROC Curve (Tuned Model)")
-    plt.legend()
-    plt.show()
+# Plot ROC Curve
+fpr, tpr, thresholds = roc_curve(y_test, y_pred_proba)
+plt.figure(figsize=(8, 6))
+plt.plot(fpr, tpr, label=f"ROC Curve (AUC = {roc_auc:.2f})", color='darkorange')
+plt.plot([0, 1], [0, 1], linestyle='--', color='gray')
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve")
+plt.legend(loc="lower right")
+plt.grid()
+plt.show()
+
+
+# # ----------------------------------------Hyperparameter Tuning-------------------------------------------
+# # KNN classifier after tuning
+# # Define the parameter grid
+# param_grid = {
+#     'n_neighbors': [3, 5, 7, 9, 11],
+#     'weights': ['uniform', 'distance'],
+#     'metric': ['euclidean', 'manhattan', 'minkowski']
+# }
+
+# # Perform Grid Search
+# grid_search = GridSearchCV(estimator=KNeighborsClassifier(), param_grid=param_grid, cv=5, scoring='accuracy', n_jobs=-1)
+# grid_search.fit(X_train, y_train)
+
+# # Best parameters and cross-validation accuracy
+# print("\nBest Parameters from Grid Search:", grid_search.best_params_)
+# print("Best Cross-Validation Accuracy from Grid Search:", grid_search.best_score_)
+
+# # ----------------------------------- Tuned k-NN Model -----------------------------------
+# # Use the best model from Grid Search
+# best_knn = grid_search.best_estimator_
+
+# # Evaluate the tuned model
+# y_pred_tuned = best_knn.predict(X_test)
+# accuracy_tuned = accuracy_score(y_test, y_pred_tuned)
+# precision_tuned = precision_score(y_test, y_pred_tuned, average='weighted')
+# recall_tuned = recall_score(y_test, y_pred_tuned, average='weighted')
+# f1_tuned = f1_score(y_test, y_pred_tuned, average='weighted')
+
+# print("\nTuned Model Evaluation Metrics:")
+# print(f"Accuracy: {accuracy_tuned:.4f}")
+# print(f"Precision: {precision_tuned:.4f}")
+# print(f"Recall: {recall_tuned:.4f}")
+# print(f"F1-Score: {f1_tuned:.4f}")
+
+# # ----------------------------------- Visualization -----------------------------------
+# # Confusion Matrix
+# cm = confusion_matrix(y_test, y_pred_tuned)
+# disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=best_knn.classes_)
+# disp.plot(cmap=plt.cm.Blues)
+# plt.title("Confusion Matrix (Tuned Model)")
+# plt.show()
+
+# # ROC Curve (for binary classification)
+# if len(set(y)) == 2:
+#     y_proba_tuned = best_knn.predict_proba(X_test)[:, 1]
+#     fpr, tpr, _ = roc_curve(y_test, y_proba_tuned)
+#     plt.figure(figsize=(10, 6))
+#     plt.plot(fpr, tpr, label="ROC Curve (Tuned)")
+#     plt.plot([0, 1], [0, 1], linestyle='--', color='red', label="Random Chance")
+#     plt.xlabel("False Positive Rate")
+#     plt.ylabel("True Positive Rate")
+#     plt.title("ROC Curve (Tuned Model)")
+#     plt.legend()
+#     plt.show()
