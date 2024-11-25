@@ -10,7 +10,8 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 from sklearn.ensemble import IsolationForest
 from sklearn.neighbors import LocalOutlierFactor
-
+from scipy.cluster.hierarchy import dendrogram, linkage
+from sklearn.cluster import AgglomerativeClustering
 from sklearn.model_selection import train_test_split, cross_val_score, KFold
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
@@ -213,6 +214,89 @@ print(results_df)
 # print(dbscan_results_df)
 
 
+# Hierarchical Clustering
+n_clusters_range = range(2, 11)  # This will try 2 to 10 clusters
+
+# Initialize lists to store results
+silhouette_scores = []
+calinski_scores = []
+davies_scores = []
+
+# Compute linkage matrix for the dendrogram
+plt.figure(figsize=(12, 8))
+linkage_matrix = linkage(X, method='ward')  # 'ward' linkage minimizes variance
+dendrogram(linkage_matrix, truncate_mode="level", p=5)  # Show the first 5 levels of the dendrogram
+plt.title("Hierarchical Clustering Dendrogram")
+plt.xlabel("Sample index")
+plt.ylabel("Distance")
+plt.show()
+
+# Perform Hierarchical Clustering for each number of clusters
+for n_clusters in n_clusters_range:
+    agg_clustering = AgglomerativeClustering(n_clusters=n_clusters, metric='euclidean', linkage='ward')
+    agg_labels = agg_clustering.fit_predict(X)
+
+    # Calculate and store the evaluation metrics
+    silhouette_scores.append(silhouette_score(X, agg_labels))
+    calinski_scores.append(calinski_harabasz_score(X, agg_labels))
+    davies_scores.append(davies_bouldin_score(X, agg_labels))
+
+# Create a DataFrame with the results
+hierarchical_results_df = pd.DataFrame({
+    'Number of Clusters': list(n_clusters_range),
+    'Silhouette Score': silhouette_scores,
+    'Calinski-Harabasz Index': calinski_scores,
+    'Davies-Bouldin Index': davies_scores
+})
+
+# Plot the evaluation metrics
+plt.figure(figsize=(15, 5))
+
+# Silhouette Score plot
+plt.subplot(1, 3, 1)
+plt.plot(n_clusters_range, silhouette_scores, marker='o')
+plt.title('Silhouette Score vs. Number of Clusters')
+plt.xlabel('Number of Clusters')
+plt.ylabel('Silhouette Score')
+
+# Calinski-Harabasz Index plot
+plt.subplot(1, 3, 2)
+plt.plot(n_clusters_range, calinski_scores, marker='o', color='orange')
+plt.title('Calinski-Harabasz Index vs. Number of Clusters')
+plt.xlabel('Number of Clusters')
+plt.ylabel('Calinski-Harabasz Index')
+
+# Davies-Bouldin Index plot
+plt.subplot(1, 3, 3)
+plt.plot(n_clusters_range, davies_scores, marker='o', color='green')
+plt.title('Davies-Bouldin Index vs. Number of Clusters')
+plt.xlabel('Number of Clusters')
+plt.ylabel('Davies-Bouldin Index')
+
+plt.tight_layout()
+plt.show()
+
+# Visualize Agglomerative Clustering for a specific number of clusters (e.g., 4)
+n_clusters_visualization = 4
+agg_clustering_visualization = AgglomerativeClustering(n_clusters=n_clusters_visualization, metric='euclidean',
+                                                       linkage='ward')
+agg_labels_visualization = agg_clustering_visualization.fit_predict(X)
+
+# Visualize Agglomerative Clustering results using PCA components
+plt.figure(figsize=(10, 6))
+scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=agg_labels_visualization, cmap='viridis', s=50, alpha=0.7)
+plt.title(f'Agglomerative Clustering (n_clusters={n_clusters_visualization})')
+plt.xlabel('PCA Component 1')
+plt.ylabel('PCA Component 2')
+plt.colorbar(scatter)
+plt.show()
+
+# Display the DataFrame
+print(hierarchical_results_df)
+
+
+
+
 # -------------------------------------Outlier detection------------------------------------------------
 numerical_data = data[numerical_columns]
 
@@ -239,6 +323,29 @@ print(data['Outlier_ISO'].value_counts())
 # Remove outliers
 data = data[data['Outlier_ISO'] == 1].drop(columns=['Outlier_ISO'])
 data.to_csv('cleaned_data.csv', index=False)
+
+# LOF
+# Step 1: Fit the LOF model
+lof = LocalOutlierFactor(n_neighbors=20, contamination=0.05)  # 5% of data considered outliers
+outlier_labels = lof.fit_predict(X)  # -1 indicates an outlier, 1 indicates inlier
+outlier_scores = -lof.negative_outlier_factor_  # Higher scores mean more likely to be an outlier
+
+# Step 2: Visualize Outliers
+plt.figure(figsize=(10, 6))
+scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=outlier_labels, cmap='coolwarm', s=50, alpha=0.7)
+plt.title("Local Outlier Factor (LOF) - Outlier Detection")
+plt.xlabel('PCA Component 1')
+plt.ylabel('PCA Component 2')
+plt.colorbar(scatter)
+plt.show()
+
+# Step 3: Count Outliers
+n_outliers = sum(outlier_labels == -1)
+print(f"Local Outlier Factor detected {n_outliers} outliers out of {X.shape[0]} samples.")
+
+# Optional: Filter out outliers for further analysis
+cleaned_data = data[outlier_labels == 1]  # Retain only inliers
+print(f"Remaining data after outlier removal: {cleaned_data.shape}")
 
 
 
