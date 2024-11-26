@@ -129,8 +129,8 @@ mapping = {
         '3': '4 or 5 days'
     },
     'TUE': {
-        '1': '0–2 hours',
-        '2': '3–5 hours',
+        '1': '0-2 hours',
+        '2': '3-5 hours',
         '3': 'More than 5 hours',
     },
     'FCVC': {
@@ -152,8 +152,8 @@ new_column_names = {
     'TUE': 'Time using technology devices (TUE)',
     'CALC': 'Consumption of alcohol (CALC)',
     'CAEC': 'Consumption of food between meals (CAEC)',
-    'FAVC': 'Frequent consumption of high caloric food (SCC)',
-    'SCC' : 'Calories consumption monitoring (FAVC)',    
+    'FAVC': 'Frequent consumption of high caloric food (FAVC)',
+    'SCC' : 'Calories consumption monitoring (SCC)',    
 }
 
 data_copy.rename(columns=new_column_names, inplace=True)
