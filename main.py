@@ -396,7 +396,8 @@ results_df = pd.DataFrame({
 
 print(results_df)
 
-# DBSCAN clustering
+
+## DBSCAN Clustering
 # Analyze kNN distances for estimating optimal eps
 neighbors = NearestNeighbors(n_neighbors=10)
 neighbors_fit = neighbors.fit(X_pca)
@@ -412,9 +413,16 @@ plt.ylabel("Distance to 10th Nearest Neighbor")
 plt.grid(True)
 plt.show()
 
+# Define the range of eps values for DBSCAN
 eps_values = [4.0, 4.2, 4.5, 4.8, 5.0]  # Adjust this based on kNN plot
 min_samples = 10
-dbscan_results = []
+
+dbscan_silhouette_scores = []
+dbscan_calinski_scores = []
+dbscan_davies_scores = []
+
+dbscan_base_dir = "figs/dbscan_clustering/cluster"
+Path(dbscan_base_dir).mkdir(parents=True, exist_ok=True)
 
 for eps in eps_values:
     dbscan = DBSCAN(eps=eps, min_samples=min_samples)
@@ -424,28 +432,18 @@ for eps in eps_values:
 
     if num_clusters <= 1:
         print(f"DBSCAN skipped for eps={eps} (all points classified as noise).")
-        dbscan_results.append({
-            'Eps': eps,
-            'Min Samples': min_samples,
-            'Clusters': num_clusters,
-            'Silhouette Score': None,
-            'Calinski-Harabasz Index': None,
-            'Davies-Bouldin Index': None
-        })
+        dbscan_silhouette_scores.append(None)
+        dbscan_calinski_scores.append(None)
+        dbscan_davies_scores.append(None)
         continue
 
     silhouette = silhouette_score(X_pca, labels)
     calinski = calinski_harabasz_score(X_pca, labels)
     davies = davies_bouldin_score(X_pca, labels)
 
-    dbscan_results.append({
-        'Eps': eps,
-        'Min Samples': min_samples,
-        'Clusters': num_clusters,
-        'Silhouette Score': silhouette,
-        'Calinski-Harabasz Index': calinski,
-        'Davies-Bouldin Index': davies
-    })
+    dbscan_silhouette_scores.append(silhouette)
+    dbscan_calinski_scores.append(calinski)
+    dbscan_davies_scores.append(davies)
 
     plt.figure(figsize=(10, 6))
     scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', s=50, alpha=0.7)
@@ -453,12 +451,48 @@ for eps in eps_values:
     plt.xlabel('PCA Component 1')
     plt.ylabel('PCA Component 2')
     plt.colorbar(scatter)
-    plt.grid(True)
+    filename = f"dbscan_eps_{eps}.png"
+    filepath = os.path.join(dbscan_base_dir, filename)
+    plt.savefig(filepath, dpi=300, bbox_inches='tight')
     plt.show()
+    plt.close()
 
-dbscan_results_df = pd.DataFrame(dbscan_results)
-print("DBSCAN Tuning Results:")
+# Normalize the scores for comparison
+dbscan_silhouette_array = np.array([score if score is not None else 0 for score in dbscan_silhouette_scores])
+dbscan_calinski_array = np.array([score if score is not None else 0 for score in dbscan_calinski_scores])
+dbscan_davies_array = np.array([score if score is not None else np.inf for score in dbscan_davies_scores])
+
+scaler = MinMaxScaler()
+dbscan_silhouette_normalized = scaler.fit_transform(dbscan_silhouette_array.reshape(-1, 1)).flatten()
+dbscan_calinski_normalized = scaler.fit_transform(dbscan_calinski_array.reshape(-1, 1)).flatten()
+dbscan_davies_normalized = scaler.fit_transform((1 / dbscan_davies_array).reshape(-1, 1)).flatten()
+
+dbscan_average_scores = (dbscan_silhouette_normalized + dbscan_calinski_normalized + dbscan_davies_normalized) / 3
+
+dbscan_best_eps_index = np.argmax(dbscan_average_scores)
+dbscan_best_eps = eps_values[dbscan_best_eps_index]
+
+print("DBSCAN Normalized Scores:")
+print(f"Silhouette: {dbscan_silhouette_normalized}")
+print(f"Calinski-Harabasz: {dbscan_calinski_normalized}")
+print(f"Inverted Davies-Bouldin: {dbscan_davies_normalized}")
+print(f"Average Scores: {dbscan_average_scores}")
+print(f"Best eps value: {dbscan_best_eps}")
+
+dbscan_results_df = pd.DataFrame({
+    'Eps': eps_values,
+    'Silhouette Score': dbscan_silhouette_scores,
+    'Calinski-Harabasz Index': dbscan_calinski_scores,
+    'Davies-Bouldin Index': dbscan_davies_scores,
+    'Normalized Silhouette Score': dbscan_silhouette_normalized,
+    'Normalized Calinski-Harabasz Index': dbscan_calinski_normalized,
+    'Normalized Davies-Bouldin Index (Inverted)': dbscan_davies_normalized,
+    'Average Normalized Score': dbscan_average_scores
+})
+
+print("DBSCAN Results Summary:")
 print(dbscan_results_df)
+
 
 # Hierarchical Clustering
 
