@@ -27,7 +27,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import label_binarize
-from imblearn.over_sampling import SMOTE,RandomOverSampler
+from imblearn.over_sampling import SMOTE, RandomOverSampler
 from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve, auc
 from pathlib import Path
@@ -50,7 +50,6 @@ print(data.info())
 # print(data.isnull().sum())
 data = data.drop_duplicates()
 print(data.info())
-
 
 data['Age'] = data["Age"].astype(int)
 numerical_columns = ['Height', 'Weight', 'FCVC', 'NCP', 'CH2O', 'FAF', 'TUE']
@@ -91,7 +90,6 @@ categorical_columns = ['Gender', 'family_history_with_overweight', 'FAVC', 'CAEC
 # print(normal_weight_count)
 
 data['BMI'] = round(data['Weight'] / (data['Height']) ** 2, 2)
-
 
 # ----------------------------------------EDA---------------------------------------
 # target_column = 'NObeyesdad'
@@ -162,12 +160,12 @@ new_column_names = {
     'CALC': 'Consumption of alcohol (CALC)',
     'CAEC': 'Consumption of food between meals (CAEC)',
     'FAVC': 'Frequent consumption of high caloric food (FAVC)',
-    'SCC' : 'Calories consumption monitoring (SCC)',    
+    'SCC': 'Calories consumption monitoring (SCC)',
 }
 
 data_copy.rename(columns=new_column_names, inplace=True)
 print(data_copy.info())
-data_copy.to_csv('refined_data.csv', index = False)
+data_copy.to_csv('refined_data.csv', index=False)
 
 # LabelEncoder = LabelEncoder()
 # for col in categorical_columns:
@@ -177,31 +175,32 @@ data_copy.to_csv('refined_data.csv', index = False)
 
 # ####### Average age of each obesity type #########
 print(data.groupby("NObeyesdad")['Age'].median())
-data.groupby("NObeyesdad")["Age"].median().sort_values(ascending=False).plot(kind="bar",color = sns.color_palette("Set1"))
+data.groupby("NObeyesdad")["Age"].median().sort_values(ascending=False).plot(kind="bar",
+                                                                             color=sns.color_palette("Set1"))
 plt.title("Average age of each obesity type")
 plt.savefig("figs/average_age_obesity_type.png")
 plt.show()
 
-
 # ####### Average weight of each obesity type #########
 print(data.groupby("NObeyesdad")['Weight'].median())
-data.groupby("NObeyesdad")["Weight"].median().sort_values(ascending=False).plot(kind="bar",color=sns.color_palette("Set2"))
+data.groupby("NObeyesdad")["Weight"].median().sort_values(ascending=False).plot(kind="bar",
+                                                                                color=sns.color_palette("Set2"))
 plt.title("Average Weight of each obesity type")
 plt.savefig("figs/average_weight_obesity_type.png")
 plt.show()
 
 # ####### How is obesity type affected by eating high calorie food? #########
 print(data.groupby(['NObeyesdad', 'FAVC'])["FAVC"].count())
-plt.figure(figsize=(10,7))
-sns.countplot(data=data,x=data.NObeyesdad,hue=data.FAVC,palette=sns.color_palette("Dark2"))
+plt.figure(figsize=(10, 7))
+sns.countplot(data=data, x=data.NObeyesdad, hue=data.FAVC, palette=sns.color_palette("Dark2"))
 plt.xticks(rotation=-20)
 plt.title("How is obesity type affected by eating high calorie food?")
 plt.savefig("figs/obesity_type_eating_high_calorie_food.png")
 plt.show()
 
 # ####### Does family history with overweight affect obesity type? #########
-plt.figure(figsize=(10,7))
-sns.countplot(data=data,x=data.NObeyesdad,hue=data.family_history_with_overweight,palette=sns.color_palette("Dark2"))
+plt.figure(figsize=(10, 7))
+sns.countplot(data=data, x=data.NObeyesdad, hue=data.family_history_with_overweight, palette=sns.color_palette("Dark2"))
 plt.xticks(rotation=-20)
 plt.title("Does family history with overweight affect obesity type?")
 plt.savefig("figs/family_history_with_overweight_obesity_type.png")
@@ -209,12 +208,12 @@ plt.show()
 
 # ####### Correlation between data atributes #########
 corr_data = data.copy()
-encoder  = LabelEncoder()
+encoder = LabelEncoder()
 for col in corr_data.select_dtypes(include="object").columns:
-    corr_data[col] =encoder.fit_transform(corr_data[col])
+    corr_data[col] = encoder.fit_transform(corr_data[col])
 
-plt.figure(figsize=(16,13))
-sns.heatmap(data=corr_data.corr(),annot=True)
+plt.figure(figsize=(16, 13))
+sns.heatmap(data=corr_data.corr(), annot=True)
 plt.title("Correlation between data atributes")
 plt.savefig("figs/correlation_between_data_attributes.png")
 plt.show()
@@ -266,6 +265,7 @@ def plot_clusters(X, labels, title, save_path=None):
         plt.savefig(filepath, dpi=300, bbox_inches='tight')
     plt.close()
 
+
 base_dir = "figs/k_Means_Clustering/cluster"
 Path(base_dir).mkdir(parents=True, exist_ok=True)
 for k in cluster_range:
@@ -278,12 +278,11 @@ for k in cluster_range:
     kmeans_calinski_scores.append(calinski)
     kmeans_davies_scores.append(davies)
 
-   
     filename = f"cluster_k{k}.png"
     filepath = os.path.join(base_dir, filename)
-   
+
     plot_clusters(X_pca, labels, f"K-Means Clustering (n_clusters={k})", save_path=file_path)
-    
+
 silhouette_array = np.array(kmeans_silhouette_scores)
 calinski_array = np.array(kmeans_calinski_scores)
 davies_array = np.array(kmeans_davies_scores)
@@ -307,7 +306,6 @@ print(f"Inverted Davies-Bouldin: {davies_normalized}")
 print(f"Average Scores: {average_scores}")
 print(f"Best number of clusters: {best_k}")
 
-
 # Create a DataFrame to summarize the evaluation metrics
 results_df = pd.DataFrame({
     'Number of Clusters': list(cluster_range),
@@ -318,8 +316,7 @@ results_df = pd.DataFrame({
 
 print(results_df)
 
-
-# # K-Means Clustering with target column 
+# # K-Means Clustering with target column
 X = data.drop(columns='NObeyesdad', inplace=False)
 
 # Apply PCA for dimensionality reduction (2 components for visualization)
@@ -346,6 +343,7 @@ def plot_clusters(X, labels, title):
     plt.ylabel('PCA Component 2')
     plt.colorbar(scatter)
     plt.show()
+
 
 base_dir = "figs/k_Means_Clustering/cluster"
 Path(base_dir).mkdir(parents=True, exist_ok=True)
@@ -388,7 +386,6 @@ print(f"Inverted Davies-Bouldin: {davies_normalized}")
 print(f"Average Scores: {average_scores}")
 print(f"Best number of clusters: {best_k}")
 
-
 # Create a DataFrame to summarize the evaluation metrics
 results_df = pd.DataFrame({
     'Number of Clusters': list(cluster_range),
@@ -399,13 +396,12 @@ results_df = pd.DataFrame({
 
 print(results_df)
 
-
-#DBSCAN clustering
-#Analyze kNN distances for estimating optimal eps
-neighbors = NearestNeighbors(n_neighbors=10) 
+# DBSCAN clustering
+# Analyze kNN distances for estimating optimal eps
+neighbors = NearestNeighbors(n_neighbors=10)
 neighbors_fit = neighbors.fit(X_pca)
 distances, _ = neighbors_fit.kneighbors(X_pca)
-distances = np.sort(distances[:, -1])  
+distances = np.sort(distances[:, -1])
 
 # Plot kNN distances
 plt.figure(figsize=(10, 6))
@@ -416,8 +412,8 @@ plt.ylabel("Distance to 10th Nearest Neighbor")
 plt.grid(True)
 plt.show()
 
-eps_values = [4.0, 4.2, 4.5, 4.8, 5.0] # Adjust this based on kNN plot
-min_samples = 10  
+eps_values = [4.0, 4.2, 4.5, 4.8, 5.0]  # Adjust this based on kNN plot
+min_samples = 10
 dbscan_results = []
 
 for eps in eps_values:
@@ -464,91 +460,123 @@ dbscan_results_df = pd.DataFrame(dbscan_results)
 print("DBSCAN Tuning Results:")
 print(dbscan_results_df)
 
+# Hierarchical Clustering
 
-# # Hierarchical Clustering
-# n_clusters_range = range(2, 11)  # This will try 2 to 10 clusters
+print("Hierarchical Clustering Results")
 
-# # Initialize lists to store results
-# silhouette_scores = []
-# calinski_scores = []
-# davies_scores = []
 
-# # Compute linkage matrix for the dendrogram
-# plt.figure(figsize=(12, 8))
-# linkage_matrix = linkage(X, method='ward')  # 'ward' linkage minimizes variance
-# dendrogram(linkage_matrix, truncate_mode="level", p=5)  # Show the first 5 levels of the dendrogram
-# plt.title("Hierarchical Clustering Dendrogram")
-# plt.xlabel("Sample index")
-# plt.ylabel("Distance")
-# plt.show()
+def plot_dendrogram(X, method='ward', truncate_level=5, title="Hierarchical Clustering Dendrogram"):
+    """Plots a dendrogram for hierarchical clustering."""
+    plt.figure(figsize=(12, 8))
+    linkage_matrix = linkage(X, method=method)
+    dendrogram(linkage_matrix, truncate_mode='level', p=truncate_level)
+    plt.title(title)
+    plt.xlabel("Sample Index")
+    plt.ylabel("Distance")
+    plt.show()
 
-# # Perform Hierarchical Clustering for each number of clusters
-# for n_clusters in n_clusters_range:
-#     agg_clustering = AgglomerativeClustering(n_clusters=n_clusters, metric='euclidean', linkage='ward')
-#     agg_labels = agg_clustering.fit_predict(X)
 
-#     # Calculate and store the evaluation metrics
-#     silhouette_scores.append(silhouette_score(X, agg_labels))
-#     calinski_scores.append(calinski_harabasz_score(X, agg_labels))
-#     davies_scores.append(davies_bouldin_score(X, agg_labels))
+def evaluate_hierarchical_clustering(X, n_clusters_range, linkage_method='ward'):
+    """Evaluates hierarchical clustering using multiple metrics."""
+    hierarchical_results = []
 
-# # Create a DataFrame with the results
-# hierarchical_results_df = pd.DataFrame({
-#     'Number of Clusters': list(n_clusters_range),
-#     'Silhouette Score': silhouette_scores,
-#     'Calinski-Harabasz Index': calinski_scores,
-#     'Davies-Bouldin Index': davies_scores
-# })
+    for n_clusters in n_clusters_range:
+        model = AgglomerativeClustering(n_clusters=n_clusters, linkage=linkage_method)
+        labels = model.fit_predict(X)
 
-# # Plot the evaluation metrics
-# plt.figure(figsize=(15, 5))
+        silhouette = silhouette_score(X, labels)
+        calinski = calinski_harabasz_score(X, labels)
+        davies = davies_bouldin_score(X, labels)
 
-# # Silhouette Score plot
-# plt.subplot(1, 3, 1)
-# plt.plot(n_clusters_range, silhouette_scores, marker='o')
-# plt.title('Silhouette Score vs. Number of Clusters')
-# plt.xlabel('Number of Clusters')
-# plt.ylabel('Silhouette Score')
+        hierarchical_results.append({
+            'Number of Clusters': n_clusters,
+            'Silhouette Score': silhouette,
+            'Calinski-Harabasz Index': calinski,
+            'Davies-Bouldin Index': davies
+        })
 
-# # Calinski-Harabasz Index plot
-# plt.subplot(1, 3, 2)
-# plt.plot(n_clusters_range, calinski_scores, marker='o', color='orange')
-# plt.title('Calinski-Harabasz Index vs. Number of Clusters')
-# plt.xlabel('Number of Clusters')
-# plt.ylabel('Calinski-Harabasz Index')
+    return pd.DataFrame(hierarchical_results)
 
-# # Davies-Bouldin Index plot
-# plt.subplot(1, 3, 3)
-# plt.plot(n_clusters_range, davies_scores, marker='o', color='green')
-# plt.title('Davies-Bouldin Index vs. Number of Clusters')
-# plt.xlabel('Number of Clusters')
-# plt.ylabel('Davies-Bouldin Index')
 
-# plt.tight_layout()
-# plt.show()
+def print_hierarchical_results(df):
+    """Prints hierarchical clustering results in a tabular format."""
+    print(df)
+    print("\nBest Results:")
+    best_silhouette_idx = df['Silhouette Score'].idxmax()
+    print(f"Best Number of Clusters (Silhouette): {df.loc[best_silhouette_idx, 'Number of Clusters']}")
+    print(f"Silhouette Score: {df.loc[best_silhouette_idx, 'Silhouette Score']:.4f}")
+    print(f"Calinski-Harabasz Index: {df.loc[best_silhouette_idx, 'Calinski-Harabasz Index']:.4f}")
+    print(f"Davies-Bouldin Index: {df.loc[best_silhouette_idx, 'Davies-Bouldin Index']:.4f}")
 
-# # Visualize Agglomerative Clustering for a specific number of clusters (e.g., 4)
-# n_clusters_visualization = 4
-# agg_clustering_visualization = AgglomerativeClustering(n_clusters=n_clusters_visualization, metric='euclidean',
-#                                                        linkage='ward')
-# agg_labels_visualization = agg_clustering_visualization.fit_predict(X)
 
-# # Visualize Agglomerative Clustering results using PCA components
-# plt.figure(figsize=(10, 6))
-# scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=agg_labels_visualization, cmap='viridis', s=50, alpha=0.7)
-# plt.title(f'Agglomerative Clustering (n_clusters={n_clusters_visualization})')
-# plt.xlabel('PCA Component 1')
-# plt.ylabel('PCA Component 2')
-# plt.colorbar(scatter)
-# plt.show()
+def plot_evaluation_metrics(df):
+    """Plots evaluation metrics for hierarchical clustering."""
+    plt.figure(figsize=(15, 5))
 
-# # Display the DataFrame
-# print(hierarchical_results_df)
+    # Silhouette Score
+    plt.subplot(1, 3, 1)
+    plt.plot(df['Number of Clusters'], df['Silhouette Score'], marker='o')
+    plt.title("Silhouette Score vs. Number of Clusters")
+    plt.xlabel("Number of Clusters")
+    plt.ylabel("Silhouette Score")
+
+    # Calinski-Harabasz Index
+    plt.subplot(1, 3, 2)
+    plt.plot(df['Number of Clusters'], df['Calinski-Harabasz Index'], marker='o', color='orange')
+    plt.title("Calinski-Harabasz Index vs. Number of Clusters")
+    plt.xlabel("Number of Clusters")
+    plt.ylabel("Calinski-Harabasz Index")
+
+    # Davies-Bouldin Index
+    plt.subplot(1, 3, 3)
+    plt.plot(df['Number of Clusters'], df['Davies-Bouldin Index'], marker='o', color='green')
+    plt.title("Davies-Bouldin Index vs. Number of Clusters")
+    plt.xlabel("Number of Clusters")
+    plt.ylabel("Davies-Bouldin Index")
+
+    plt.tight_layout()
+    plt.show()
+
+
+def plot_clusters(X_pca, labels, title="Hierarchical Clustering"):
+    """Plots clustering results using PCA-reduced data."""
+    plt.figure(figsize=(10, 6))
+    scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', s=50, alpha=0.7)
+    plt.title(title)
+    plt.xlabel("PCA Component 1")
+    plt.ylabel("PCA Component 2")
+    plt.colorbar(scatter)
+    plt.show()
+
+
+# Perform hierarchical clustering
+X = data.drop(columns='NObeyesdad')
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)
+
+# Plot dendrogram
+plot_dendrogram(X, method='ward', truncate_level=5)
+
+# Evaluate clustering performance
+n_clusters_range = range(2, 10)
+results_df = evaluate_hierarchical_clustering(X, n_clusters_range, linkage_method='ward')
+
+# Print clustering results
+print_hierarchical_results(results_df)
+
+# Plot evaluation metrics
+plot_evaluation_metrics(results_df)
+
+# Visualize clustering with the best number of clusters
+best_n_clusters = results_df.loc[results_df['Silhouette Score'].idxmax(), 'Number of Clusters']
+model = AgglomerativeClustering(n_clusters=int(best_n_clusters), linkage='ward')
+labels = model.fit_predict(X)
+plot_clusters(X_pca, labels, title=f"Agglomerative Clustering with {best_n_clusters} Clusters")
 
 output_dir_outlier_dectection = "figs/outlier_detection/"
 os.makedirs(output_dir_outlier_dectection, exist_ok=True)
 # # -------------------------------------Outlier detection------------------------------------------------
-feature_data =  data.drop(columns='NObeyesdad', inplace=False)
+feature_data = data.drop(columns='NObeyesdad', inplace=False)
 iso_forest = IsolationForest()
 
 # Isolation Forest 
@@ -568,7 +596,7 @@ print("Isolation Forest Outlier Counts:")
 print(data['Outlier_ISO'].value_counts())
 
 # Print the outliers
-#outliers = data[data['Outlier_ISO'] == -1]
+# outliers = data[data['Outlier_ISO'] == -1]
 # print("Outliers detected by Isolation Forest:")
 # print(outliers)
 
@@ -594,10 +622,8 @@ plt.ylabel("Weight")
 plt.savefig("figs/outlier_detection/ISO_variation_in_oultiers")
 plt.show()
 
-#data = data[data['Outlier_ISO'] == 1]
-#data = data.drop(columns='Outlier_ISO', inplace=False)
-
-
+# data = data[data['Outlier_ISO'] == 1]
+# data = data.drop(columns='Outlier_ISO', inplace=False)
 
 
 # # ---- LOF ------
@@ -629,7 +655,6 @@ plt.ylabel("Weight")
 plt.savefig("figs/outlier_detection/LOF_variation_in_oultiers")
 plt.show()
 
-
 # Visualize the results using a scatter plot
 plt.figure(figsize=(10, 6))
 sns.scatterplot(data=data, x='Age', y='Weight', hue='Outlier_LOF', palette='coolwarm')
@@ -643,8 +668,7 @@ plt.show()
 # Count and display the number of outliers detected
 n_outliers = sum(outlier_labels == -1)
 print(f"Local Outlier Factor detected {n_outliers} outliers out of {feature_data.shape[0]} samples.")
-#data = data.drop(columns='Outlier_LOF', inplace=False)
-
+# data = data.drop(columns='Outlier_LOF', inplace=False)
 
 
 ## EllipticEnvelope
@@ -691,13 +715,13 @@ print(f"Elliptic Envelope detected {n_outliers_elliptic} outliers out of {featur
 ##Removal of outliers based on above results
 
 common_outliers = (
-    set(data[data['Outlier_Elliptic'] == -1].index) &
-    set(data[data['Outlier_ISO'] == -1].index) &
-    set(data[data['Outlier_LOF'] == -1].index)
+        set(data[data['Outlier_Elliptic'] == -1].index) &
+        set(data[data['Outlier_ISO'] == -1].index) &
+        set(data[data['Outlier_LOF'] == -1].index)
 )
 print(f"Number of common outliers: {len(common_outliers)}")
 
-data = data.drop(index = common_outliers)
+data = data.drop(index=common_outliers)
 
 data.to_csv('cleaned_data.csv', index=False)
 feature_data = data.drop(columns='Outlier_Elliptic', inplace=False)
@@ -724,7 +748,6 @@ print(data.info())
 X = data.drop('NObeyesdad', axis=1)
 y = data['NObeyesdad']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
 
 param_grid = {
     'Random Forest': {
@@ -790,7 +813,6 @@ for name, clf in classifiers.items():
     print(f"Model: {name}")
     print("\nClassification Report (ss):\n", classification_report(y_test, y_pred))
 
-
     # Display metrics
     # print(f"Model: {name}")
     # print(f"Recall: {recall}")
@@ -800,9 +822,6 @@ for name, clf in classifiers.items():
     # print("-" * 50)
     # print()
 
-
-
-
 class_labels = ['Insuf', 'Normal', 'Obesi I', 'Obesi II', 'Obesi III', 'OverW I', 'OverW II']
 
 fig, axes = plt.subplots(1, len(best_classifiers), figsize=(15, 4))
@@ -810,7 +829,7 @@ fig, axes = plt.subplots(1, len(best_classifiers), figsize=(15, 4))
 for ax, (model_name, best_model) in zip(axes, best_classifiers.items()):
     predictions = best_model.predict(X_test)
     cm = confusion_matrix(y_test, predictions)
-    sns.heatmap(cm, annot=True, fmt="d", cmap="Greens", cbar=False, ax=ax, 
+    sns.heatmap(cm, annot=True, fmt="d", cmap="Greens", cbar=False, ax=ax,
                 xticklabels=class_labels, yticklabels=class_labels)
     ax.set_title(f"{model_name}", weight='bold', size=13)
     ax.set_xlabel("Predicted")
@@ -819,7 +838,6 @@ for ax, (model_name, best_model) in zip(axes, best_classifiers.items()):
 plt.tight_layout()
 plt.savefig('figs/Confusion_matrix_classification.png')
 plt.show()
-
 
 fig, axs = plt.subplots(2, 3, figsize=(18, 12))
 axs = axs.ravel()  # Flatten the axes for easy indexing
