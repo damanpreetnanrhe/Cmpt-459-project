@@ -30,6 +30,7 @@ from sklearn.preprocessing import label_binarize
 from imblearn.over_sampling import SMOTE,RandomOverSampler
 from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve, auc
+from pathlib import Path
 import os
 
 pd.set_option('display.max_columns', None)
@@ -223,14 +224,103 @@ plt.show()
 data = pd.get_dummies(data, columns=categorical_columns, drop_first=False)
 data.to_csv('refined_data.csv', index=False)
 
+# LabelEncoder = LabelEncoder()
+# data['NObeyesdad'] = LabelEncoder.fit_transform(data['NObeyesdad'])
+# print(data)
+
 # # -------------------------------------Clustering-------------------------------------
-# X = data
+# K-Means Clustering without target column 
+X = data.drop(columns='NObeyesdad', inplace=False)
+
+# Apply PCA for dimensionality reduction (2 components for visualization)
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)
+
+# K-Means Clustering without target column 
+kmeans = KMeans(n_clusters=4, random_state=42)
+kmeans_labels = kmeans.fit_predict(X_pca)
+
+cluster_range = range(2, 10)
+eps_values = [0.3, 0.5, 0.7, 0.9, 1.1]
+
+kmeans_silhouette_scores = []
+kmeans_calinski_scores = []
+kmeans_davies_scores = []
+
+
+def plot_clusters(X, labels, title, save_path=None):
+    plt.figure(figsize=(10, 6))
+    scatter = plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', s=50, alpha=0.7)
+    plt.title(title)
+    plt.xlabel('PCA Component 1')
+    plt.ylabel('PCA Component 2')
+    plt.colorbar(scatter)
+    if save_path:
+        plt.savefig(filepath, dpi=300, bbox_inches='tight')
+    plt.close()
+
+base_dir = "figs/k_Means_Clustering/cluster"
+Path(base_dir).mkdir(parents=True, exist_ok=True)
+for k in cluster_range:
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    labels = kmeans.fit_predict(X)
+    silhouette = silhouette_score(X, labels)
+    calinski = calinski_harabasz_score(X, labels)
+    davies = davies_bouldin_score(X, labels)
+    kmeans_silhouette_scores.append(silhouette)
+    kmeans_calinski_scores.append(calinski)
+    kmeans_davies_scores.append(davies)
+
+   
+    filename = f"cluster_k{k}.png"
+    filepath = os.path.join(base_dir, filename)
+   
+    plot_clusters(X_pca, labels, f"K-Means Clustering (n_clusters={k})", save_path=file_path)
+    
+silhouette_array = np.array(kmeans_silhouette_scores)
+calinski_array = np.array(kmeans_calinski_scores)
+davies_array = np.array(kmeans_davies_scores)
+
+scaler = MinMaxScaler()
+silhouette_normalized = scaler.fit_transform(silhouette_array.reshape(-1, 1)).flatten()
+calinski_normalized = scaler.fit_transform(calinski_array.reshape(-1, 1)).flatten()
+davies_normalized = scaler.fit_transform((1 / davies_array).reshape(-1, 1)).flatten()
+
+# Compute average score for each k
+average_scores = (silhouette_normalized + calinski_normalized + davies_normalized) / 3
+
+# Find the best k
+best_k_index = np.argmax(average_scores)
+best_k = cluster_range[best_k_index]
+
+print("Normalized Scores:")
+print(f"Silhouette: {silhouette_normalized}")
+print(f"Calinski-Harabasz: {calinski_normalized}")
+print(f"Inverted Davies-Bouldin: {davies_normalized}")
+print(f"Average Scores: {average_scores}")
+print(f"Best number of clusters: {best_k}")
+
+
+
+# Create a DataFrame to summarize the evaluation metrics
+results_df = pd.DataFrame({
+    'Number of Clusters': list(cluster_range),
+    'Silhouette Score': kmeans_silhouette_scores,
+    'Calinski-Harabasz Index': kmeans_calinski_scores,
+    'Davies-Bouldin Index': kmeans_davies_scores
+})
+
+print(results_df)
+
+
+# # K-Means Clustering with target column 
+# X = data.copy()
 
 # # Apply PCA for dimensionality reduction (2 components for visualization)
 # pca = PCA(n_components=2)
 # X_pca = pca.fit_transform(X)
 
-# # K-Means Clustering
+# # K-Means Clustering with target column 
 # kmeans = KMeans(n_clusters=4, random_state=42)
 # kmeans_labels = kmeans.fit_predict(X)
 
@@ -251,7 +341,8 @@ data.to_csv('refined_data.csv', index=False)
 #     plt.colorbar(scatter)
 #     plt.show()
 
-
+# base_dir = "figs/k_Means_Clustering/cluster"
+# Path(base_dir).mkdir(parents=True, exist_ok=True)
 # for k in cluster_range:
 #     kmeans = KMeans(n_clusters=k, random_state=42)
 #     labels = kmeans.fit_predict(X)
@@ -263,6 +354,34 @@ data.to_csv('refined_data.csv', index=False)
 #     kmeans_davies_scores.append(davies)
 
 #     plot_clusters(X_pca, labels, f"K-Means Clustering (n_clusters={k})")
+#     filename = f"cluster_k{k}.png"
+#     filepath = os.path.join(base_dir, filename)
+#     plt.savefig(filepath, dpi=300, bbox_inches='tight')
+#     plt.close()
+
+# silhouette_array = np.array(kmeans_silhouette_scores)
+# calinski_array = np.array(kmeans_calinski_scores)
+# davies_array = np.array(kmeans_davies_scores)
+
+# scaler = MinMaxScaler()
+# silhouette_normalized = scaler.fit_transform(silhouette_array.reshape(-1, 1)).flatten()
+# calinski_normalized = scaler.fit_transform(calinski_array.reshape(-1, 1)).flatten()
+# davies_normalized = scaler.fit_transform((1 / davies_array).reshape(-1, 1)).flatten()
+
+# # Compute average score for each k
+# average_scores = (silhouette_normalized + calinski_normalized + davies_normalized) / 3
+
+# # Find the best k
+# best_k_index = np.argmax(average_scores)
+# best_k = cluster_range[best_k_index]
+
+# print("Normalized Scores:")
+# print(f"Silhouette: {silhouette_normalized}")
+# print(f"Calinski-Harabasz: {calinski_normalized}")
+# print(f"Inverted Davies-Bouldin: {davies_normalized}")
+# print(f"Average Scores: {average_scores}")
+# print(f"Best number of clusters: {best_k}")
+
 
 # # Create a DataFrame to summarize the evaluation metrics
 # results_df = pd.DataFrame({
@@ -273,6 +392,10 @@ data.to_csv('refined_data.csv', index=False)
 # })
 
 # print(results_df)
+
+
+
+
 
 # # DBSCAN clustering
 # # Analyze kNN distances for estimating optimal eps
