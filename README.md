@@ -94,6 +94,30 @@ This dataset focuses on estimating obesity levels in individuals from Mexico, Pe
 - Agglomerative Clustering 
 ![hierarchial](figs/Agglomerative_clustering.png)
 
+## Outlier Detection
+To ensure data quality and enhance model performance, the following outlier detection methods were applied:
+
+1. **Isolation Forest**:
+   - Identified **105 outliers** in the dataset.
+     ![IOF](figs/outlier_detection/ISOLation_Forest.png)
+   - Variation
+     ![IOF](figs/outlier_detection/ISO_variation_in_oultiers.png)
+2. **Local Outlier Factor (LOF)**:
+   - Detected **100 outliers**, indicating similar data irregularities.
+     ![LOF](figs/outlier_detection/LOF_outliers.png)
+   - Variation
+     ![LOF](figs/outlier_detection/LOF_variation_in_oultiers.png)
+3. **Elliptic Envelope**:
+   - Highlighted common outliers across the dataset and contributed to removing anomalies that adversely impacted model performance.
+     ![EE](figs/outlier_detection/EllipticEnvelope_outliers.png)
+   - Variation
+     ![EE](figs/outlier_detection/EllipticEnvelope_variation_in_outliers.png)
+
+
+## Feature Selection
+### Mutual Information
+We first calculated the mutual information(MI) of numerical columns and ran through one iteration of KNN. One significant boost in our results is obtained through the inclusion of categorical data columns. The results obtained are shown above with different classifiers playing a role. 
+
 ## Classification Models and Results
 ### Models Evaluated
 The following models were tested for their effectiveness in classifying obesity levels:
@@ -151,25 +175,6 @@ The table below summarizes the performance of all evaluated models:
    - Easy to interpret but slightly overfitted, achieving 95% accuracy.
 
 ![roc](figs/ROC_Curves.png)
-
-## Outlier Detection
-To ensure data quality and enhance model performance, the following outlier detection methods were applied:
-
-1. **Isolation Forest**:
-   - Identified **105 outliers** in the dataset.
-     ![IOF](figs/outlier_detection/ISOLation_Forest.png)
-   - Variation
-     ![IOF](figs/outlier_detection/ISO_variation_in_oultiers.png)
-2. **Local Outlier Factor (LOF)**:
-   - Detected **100 outliers**, indicating similar data irregularities.
-     ![LOF](figs/outlier_detection/LOF_outliers.png)
-   - Variation
-     ![LOF](figs/outlier_detection/LOF_variation_in_oultiers.png)
-3. **Elliptic Envelope**:
-   - Highlighted common outliers across the dataset and contributed to removing anomalies that adversely impacted model performance.
-     ![EE](figs/outlier_detection/EllipticEnvelope_outliers.png)
-   - Variation
-     ![EE](figs/outlier_detection/EllipticEnvelope_variation_in_outliers.png)
      
 ## Learnings
 
