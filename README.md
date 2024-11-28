@@ -77,12 +77,17 @@ This dataset focuses on estimating obesity levels in individuals from Mexico, Pe
 #### Cluster Insights:
 - Cluster 1: Individuals with healthier habits.
 - Cluster 2: Individuals with higher BMI and unhealthy habits.
+![k-means](figs/k_Means_Clustering/cluster/cluster_k2.png)
+
 ### DBSCAN
 - Clustering at eps=4.5 with 2 clusters confirms well-separated and interpretable clusters.
 - Achieved improved cluster separation while minimizing noise.
+![dbscan](figs/dbscan_clustering/cluster/dbscan_eps_4.5.png)
+
 ### Hierarchical Clustering
 - Dendrogram Analysis: Indicated 2 primary clusters with meaningful separations.
-  
+![hierarchial](figs/Agglomerative_clustering.png)
+
 ## Classification Models and Results
 ### Models Evaluated
 The following models were tested for their effectiveness in classifying obesity levels:
