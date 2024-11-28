@@ -125,6 +125,9 @@ The following hyperparameters were optimized using **GridSearchCV**:
 - `n_estimators` (Number of trees)
 - `max_depth` (Maximum depth of each tree)
 
+The grid search systematically explored combinations of C, gamma, and kernel, identifying the optimal set of parameters for your data. Before tuning, the default parameters might not have been suitable for your dataset, leading to suboptimal performance.
+
+![grid](figs/ROC_Curves.png)
 
 ### Model Comparisons
 The table below summarizes the performance of all evaluated models:
