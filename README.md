@@ -78,7 +78,7 @@ This dataset focuses on estimating obesity levels in individuals from Mexico, Pe
 - Cluster 1: Individuals with healthier habits.
 - Cluster 2: Individuals with higher BMI and unhealthy habits.
 ### DBSCAN
-- Optimal eps Value: 4.8.
+- Clustering at eps=4.5 with 2 clusters confirms well-separated and interpretable clusters.
 - Achieved improved cluster separation while minimizing noise.
 ### Hierarchical Clustering
 - Dendrogram Analysis: Indicated 2 primary clusters with meaningful separations.
