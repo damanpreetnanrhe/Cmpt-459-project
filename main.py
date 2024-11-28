@@ -766,8 +766,11 @@ classifiers = {
 kf = KFold(n_splits=5, shuffle=True, random_state=42)
 
 ######## Hyperparameter Tuning ########
+######## Hyperparameter Tuning ########
 best_classifiers = {}
-best_score = 0.0
+best_model_name = None
+best_model_instance = None
+best_f1_score = 0.0
 
 for name, clf in classifiers.items():
     grid_search = GridSearchCV(clf, param_grid[name], cv=kf, scoring='f1_weighted', n_jobs=-1)
@@ -784,6 +787,16 @@ for name, clf in classifiers.items():
     f1 = f1_score(y_test, y_pred, average='weighted')
     print(f"Model: {name}")
     print("\nClassification Report (ss):\n", classification_report(y_test, y_pred))
+
+    # Update the best classifier if this one has the highest F1 score
+    if f1 > best_f1_score:
+        best_f1_score = f1
+        best_model_name = name
+        best_model_instance = best_clf
+
+print("\n-----------------------")
+print(f"Best Classifier: {best_model_name}")
+print(f"Best F1-Score: {best_f1_score:.4f}")
 
 
 class_labels = ['Insuf', 'Normal', 'Obesi I', 'Obesi II', 'Obesi III', 'OverW I', 'OverW II']
