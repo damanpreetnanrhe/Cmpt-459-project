@@ -161,6 +161,61 @@ To ensure data quality and enhance model performance, the following outlier dete
 3. **Elliptic Envelope**:
    - Highlighted common outliers across the dataset and contributed to removing anomalies that adversely impacted model performance.
 
+## Learnings
+
+### Data Selection and Quality
+- The dataset highlights the interplay between biological and behavioral factors in obesity.
+- Diverse features and clear classification targets made the dataset ideal for supervised learning tasks.
+
+### Feature Engineering
+- Adding derived features like **BMI** significantly improved model accuracy.
+- Mutual information scores helped identify key numerical and categorical features for modeling.
+
+### Clustering Insights
+- **K-Means Clustering**: k=2 effectively separated healthy and unhealthy individuals.
+- **Hierarchical Clustering**: Confirmed optimal clustering at 2 groups based on shared traits.
+
+### Outlier Detection
+- Techniques used: **Isolation Forest**, **LOF**, and **Elliptic Envelope**.
+- Common outliers across these methods were removed to improve model performance.
+
+### Classification and Tuning
+- **Gradient Boosting** emerged as the best classifier, achieving an **F1-Score** of 0.9879.
+- **SVM** performance significantly improved with hyperparameter tuning (optimized `C`, `gamma`, and kernel).
+
+
+## Outcomes
+
+### Best Classifier
+- **Gradient Boosting** achieved the highest performance among all classifiers.
+
+### Performance Metrics
+| Model              | Training Accuracy | Test Accuracy | Best F1-Score |
+|---------------------|-------------------|---------------|---------------|
+| Gradient Boosting   | 0.99              | 0.98          | 0.9879        |
+| SVM                | 0.9862            | 0.9737        | 0.9600        |
+| KNN                | 0.9754            | 0.9593        | 0.9500        |
+| Decision Tree       | 0.9832            | 0.9545        | 0.9500        |
+
+### Domain Insights
+- Obesity levels are closely linked to **age**, **weight**, food consumption habits, and family history.
+- Clustering helped segment individuals based on shared behavioral and physiological characteristics.
+
+### Key Methods
+- **Clustering**: K-Means, Hierarchical Clustering, DBSCAN.
+- **Outlier Detection**: Isolation Forest, LOF, Elliptic Envelope.
+- **Classification**: Gradient Boosting, Random Forest, SVM, KNN, Decision Tree.
+- **Feature Engineering**: Derived **BMI** as a key feature for classification.
+
+
+## Lessons Learned
+
+- **Feature Engineering**: Added features like BMI significantly improved prediction.
+- **Outlier Detection**: Removing common outliers among methods enhanced performance.
+- **Clustering**: Showed how behavioral traits divide obesity levels effectively.
+- **Hyperparameter Tuning**: Highlighted the importance of tuning for optimizing model performance.
+
+
 
 
 
