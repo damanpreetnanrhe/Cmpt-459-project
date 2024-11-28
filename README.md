@@ -59,12 +59,16 @@ This dataset focuses on estimating obesity levels in individuals from Mexico, Pe
   A positive correlation exists between family history of obesity and higher weight categories.
 
 ## Feature Engineering
+### Correlation between attributes
+![Correlation ](figs/correlation_between_data_attributes.png)
 
 ### BMI Calculation:
 - A new feature, BMI, was added to the dataset
 ```python
   data['BMI'] = round(data['Weight'] / (data['Height'] ** 2), 2)
   ```
+![BMI ](figs/bmi_distribution_by_obesity_type.png)
+
 ### Advantages:
 - Directly correlates with obesity levels.
 - Serves as a strong predictor for machine learning models.
@@ -86,6 +90,8 @@ This dataset focuses on estimating obesity levels in individuals from Mexico, Pe
 
 ### Hierarchical Clustering
 - Dendrogram Analysis: Indicated 2 primary clusters with meaningful separations.
+![Dendogram](figs/Dendogram.png)
+- Agglomerative Clustering 
 ![hierarchial](figs/Agglomerative_clustering.png)
 
 ## Classification Models and Results
@@ -154,13 +160,20 @@ To ensure data quality and enhance model performance, the following outlier dete
 
 1. **Isolation Forest**:
    - Identified **105 outliers** in the dataset.
-
+     ![IOF](figs/outlier_detection/ISOLation_Forest.png)
+   - Variation
+     ![IOF](figs/outlier_detection/ISO_variation_in_oultiers.png)
 2. **Local Outlier Factor (LOF)**:
    - Detected **100 outliers**, indicating similar data irregularities.
-
+     ![LOF](figs/outlier_detection/LOF_outliers.png)
+   - Variation
+     ![LOF](figs/outlier_detection/LOF_variation_in_oultiers.png)
 3. **Elliptic Envelope**:
    - Highlighted common outliers across the dataset and contributed to removing anomalies that adversely impacted model performance.
-
+     ![EE](figs/outlier_detection/EllipticEnvelope_outliers.png)
+   - Variation
+     ![EE](figs/outlier_detection/EllipticEnvelope_variation_in_outliers.png)
+     
 ## Learnings
 
 ### Data Selection and Quality
