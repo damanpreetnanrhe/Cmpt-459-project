@@ -420,6 +420,7 @@ min_samples = 10
 dbscan_silhouette_scores = []
 dbscan_calinski_scores = []
 dbscan_davies_scores = []
+dbscan_num_clusters = []
 
 dbscan_base_dir = "figs/dbscan_clustering/cluster"
 Path(dbscan_base_dir).mkdir(parents=True, exist_ok=True)
@@ -429,6 +430,7 @@ for eps in eps_values:
     labels = dbscan.fit_predict(X_pca)
 
     num_clusters = len(set(labels)) - (1 if -1 in labels else 0)
+    dbscan_num_clusters.append(num_clusters)
 
     if num_clusters <= 1:
         print(f"DBSCAN skipped for eps={eps} (all points classified as noise).")
@@ -481,17 +483,16 @@ print(f"Best eps value: {dbscan_best_eps}")
 
 dbscan_results_df = pd.DataFrame({
     'Eps': eps_values,
+    'Min Samples': min_samples,
+    'Clusters': dbscan_num_clusters,
     'Silhouette Score': dbscan_silhouette_scores,
     'Calinski-Harabasz Index': dbscan_calinski_scores,
     'Davies-Bouldin Index': dbscan_davies_scores,
-    'Normalized Silhouette Score': dbscan_silhouette_normalized,
-    'Normalized Calinski-Harabasz Index': dbscan_calinski_normalized,
-    'Normalized Davies-Bouldin Index (Inverted)': dbscan_davies_normalized,
-    'Average Normalized Score': dbscan_average_scores
 })
 
 print("DBSCAN Results Summary:")
 print(dbscan_results_df)
+
 
 
 # Hierarchical Clustering
