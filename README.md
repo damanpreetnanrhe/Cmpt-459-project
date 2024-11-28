@@ -10,10 +10,10 @@ This dataset focuses on estimating obesity levels in individuals from Mexico, Pe
 - **Cross-Cultural Analysis:** Covers data from multiple countries, enabling comparative and cross-cultural studies on obesity factors.
 - **Machine Learning Ready:** With a clear target variable (`NObesity`), it supports various machine learning tasks such as classification, regression, and clustering.
 
-### Language
+### Language:
 - Python 
 
-### Libraries Used
+### Libraries Used:
 - Pandas
 - NumPy
 - Scikit-learn
