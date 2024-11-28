@@ -150,10 +150,6 @@ The table below summarizes the performance of all evaluated models:
 4. **Decision Tree**:
    - Easy to interpret but slightly overfitted, achieving 95% accuracy.
 
-### Why Random Forest Excelled
-- **Robustness**: Aggregates predictions from multiple decision trees, minimizing overfitting and improving generalization.
-- **Feature Importance**: Offers clear insights into which features (like BMI, weight, and age) are most predictive, aiding interpretability.
-
 ![roc](figs/ROC_Curves.png)
 
 ## Outlier Detection
