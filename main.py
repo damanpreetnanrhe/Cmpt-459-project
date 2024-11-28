@@ -352,367 +352,369 @@ print(results_df)
 # print(results_df)
 
 
-## DBSCAN Clustering
-# Analyze kNN distances for estimating optimal eps
-# neighbors = NearestNeighbors(n_neighbors=10)
-# neighbors_fit = neighbors.fit(X_pca)
-# distances, _ = neighbors_fit.kneighbors(X_pca)
-# distances = np.sort(distances[:, -1])
-
-# # Plot kNN distances
-# plt.figure(figsize=(10, 6))
-# plt.plot(distances)
-# plt.title("kNN Distance Plot")
-# plt.xlabel("Points Sorted by Distance")
-# plt.ylabel("Distance to 10th Nearest Neighbor")
-# plt.grid(True)
-# plt.show()
-
-# # Define the range of eps values for DBSCAN
-# eps_values = [4.0, 4.2, 4.5, 4.8, 5.0]  # Adjust this based on kNN plot
-# min_samples = 10
-
-# dbscan_silhouette_scores = []
-# dbscan_calinski_scores = []
-# dbscan_davies_scores = []
-# dbscan_num_clusters = []
-
-# dbscan_base_dir = "figs/dbscan_clustering/cluster"
-# Path(dbscan_base_dir).mkdir(parents=True, exist_ok=True)
-
-# for eps in eps_values:
-#     dbscan = DBSCAN(eps=eps, min_samples=min_samples)
-#     labels = dbscan.fit_predict(X_pca)
-
-#     num_clusters = len(set(labels)) - (1 if -1 in labels else 0)
-#     dbscan_num_clusters.append(num_clusters)
-
-#     if num_clusters <= 1:
-#         print(f"DBSCAN skipped for eps={eps} (all points classified as noise).")
-#         dbscan_silhouette_scores.append(None)
-#         dbscan_calinski_scores.append(None)
-#         dbscan_davies_scores.append(None)
-#         continue
-
-#     silhouette = silhouette_score(X_pca, labels)
-#     calinski = calinski_harabasz_score(X_pca, labels)
-#     davies = davies_bouldin_score(X_pca, labels)
-
-#     dbscan_silhouette_scores.append(silhouette)
-#     dbscan_calinski_scores.append(calinski)
-#     dbscan_davies_scores.append(davies)
-
-#     plt.figure(figsize=(10, 6))
-#     scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', s=50, alpha=0.7)
-#     plt.title(f"DBSCAN Clustering (eps={eps}, min_samples={min_samples})")
-#     plt.xlabel('PCA Component 1')
-#     plt.ylabel('PCA Component 2')
-#     plt.colorbar(scatter)
-#     filename = f"dbscan_eps_{eps}.png"
-#     filepath = os.path.join(dbscan_base_dir, filename)
-#     plt.savefig(filepath, dpi=300, bbox_inches='tight')
-#     plt.show()
-#     plt.close()
-
-# # Normalize the scores for comparison
-# dbscan_silhouette_array = np.array([score if score is not None else 0 for score in dbscan_silhouette_scores])
-# dbscan_calinski_array = np.array([score if score is not None else 0 for score in dbscan_calinski_scores])
-# dbscan_davies_array = np.array([score if score is not None else np.inf for score in dbscan_davies_scores])
-
-# scaler = MinMaxScaler()
-# dbscan_silhouette_normalized = scaler.fit_transform(dbscan_silhouette_array.reshape(-1, 1)).flatten()
-# dbscan_calinski_normalized = scaler.fit_transform(dbscan_calinski_array.reshape(-1, 1)).flatten()
-# dbscan_davies_normalized = scaler.fit_transform((1 / dbscan_davies_array).reshape(-1, 1)).flatten()
-
-# dbscan_average_scores = (dbscan_silhouette_normalized + dbscan_calinski_normalized + dbscan_davies_normalized) / 3
-
-# dbscan_best_eps_index = np.argmax(dbscan_average_scores)
-# dbscan_best_eps = eps_values[dbscan_best_eps_index]
-
-# print("DBSCAN Normalized Scores:")
-# print(f"Silhouette: {dbscan_silhouette_normalized}")
-# print(f"Calinski-Harabasz: {dbscan_calinski_normalized}")
-# print(f"Inverted Davies-Bouldin: {dbscan_davies_normalized}")
-# print(f"Average Scores: {dbscan_average_scores}")
-# print(f"Best eps value: {dbscan_best_eps}")
-
-# dbscan_results_df = pd.DataFrame({
-#     'Eps': eps_values,
-#     'Min Samples': min_samples,
-#     'Clusters': dbscan_num_clusters,
-#     'Silhouette Score': dbscan_silhouette_scores,
-#     'Calinski-Harabasz Index': dbscan_calinski_scores,
-#     'Davies-Bouldin Index': dbscan_davies_scores,
-# })
-
-# print("DBSCAN Results Summary:")
-# print(dbscan_results_df)
-
-
-
-# # Hierarchical Clustering
-
-# print("Hierarchical Clustering Results")
-
-
-# def plot_dendrogram(X, method='ward', truncate_level=5, title="Hierarchical Clustering Dendrogram"):
-#     """Plots a dendrogram for hierarchical clustering."""
-#     plt.figure(figsize=(12, 8))
-#     linkage_matrix = linkage(X, method=method)
-#     dendrogram(linkage_matrix, truncate_mode='level', p=truncate_level)
-#     plt.title(title)
-#     plt.xlabel("Sample Index")
-#     plt.ylabel("Distance")
-#     plt.show()
-
-
-# def evaluate_hierarchical_clustering(X, n_clusters_range, linkage_method='ward'):
-#     """Evaluates hierarchical clustering using multiple metrics."""
-#     hierarchical_results = []
-
-#     for n_clusters in n_clusters_range:
-#         model = AgglomerativeClustering(n_clusters=n_clusters, linkage=linkage_method)
-#         labels = model.fit_predict(X)
-
-#         silhouette = silhouette_score(X, labels)
-#         calinski = calinski_harabasz_score(X, labels)
-#         davies = davies_bouldin_score(X, labels)
-
-#         hierarchical_results.append({
-#             'Number of Clusters': n_clusters,
-#             'Silhouette Score': silhouette,
-#             'Calinski-Harabasz Index': calinski,
-#             'Davies-Bouldin Index': davies
-#         })
-
-#     return pd.DataFrame(hierarchical_results)
-
-
-# def print_hierarchical_results(df):
-#     """Prints hierarchical clustering results in a tabular format."""
-#     print(df)
-#     print("\nBest Results:")
-#     best_silhouette_idx = df['Silhouette Score'].idxmax()
-#     print(f"Best Number of Clusters (Silhouette): {df.loc[best_silhouette_idx, 'Number of Clusters']}")
-#     print(f"Silhouette Score: {df.loc[best_silhouette_idx, 'Silhouette Score']:.4f}")
-#     print(f"Calinski-Harabasz Index: {df.loc[best_silhouette_idx, 'Calinski-Harabasz Index']:.4f}")
-#     print(f"Davies-Bouldin Index: {df.loc[best_silhouette_idx, 'Davies-Bouldin Index']:.4f}")
-
-
-# def plot_evaluation_metrics(df):
-#     """Plots evaluation metrics for hierarchical clustering."""
-#     plt.figure(figsize=(15, 5))
-
-#     # Silhouette Score
-#     plt.subplot(1, 3, 1)
-#     plt.plot(df['Number of Clusters'], df['Silhouette Score'], marker='o')
-#     plt.title("Silhouette Score vs. Number of Clusters")
-#     plt.xlabel("Number of Clusters")
-#     plt.ylabel("Silhouette Score")
-
-#     # Calinski-Harabasz Index
-#     plt.subplot(1, 3, 2)
-#     plt.plot(df['Number of Clusters'], df['Calinski-Harabasz Index'], marker='o', color='orange')
-#     plt.title("Calinski-Harabasz Index vs. Number of Clusters")
-#     plt.xlabel("Number of Clusters")
-#     plt.ylabel("Calinski-Harabasz Index")
-
-#     # Davies-Bouldin Index
-#     plt.subplot(1, 3, 3)
-#     plt.plot(df['Number of Clusters'], df['Davies-Bouldin Index'], marker='o', color='green')
-#     plt.title("Davies-Bouldin Index vs. Number of Clusters")
-#     plt.xlabel("Number of Clusters")
-#     plt.ylabel("Davies-Bouldin Index")
-
-#     plt.tight_layout()
-#     plt.show()
-
-
-# def plot_clusters(X_pca, labels, title="Hierarchical Clustering"):
-#     """Plots clustering results using PCA-reduced data."""
-#     plt.figure(figsize=(10, 6))
-#     scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', s=50, alpha=0.7)
-#     plt.title(title)
-#     plt.xlabel("PCA Component 1")
-#     plt.ylabel("PCA Component 2")
-#     plt.colorbar(scatter)
-#     plt.show()
-
-
-# # Perform hierarchical clustering
-# X = data.drop(columns='NObeyesdad')
-# pca = PCA(n_components=2)
-# X_pca = pca.fit_transform(X)
-
-# # Plot dendrogram
-# plot_dendrogram(X, method='ward', truncate_level=5)
-
-# # Evaluate clustering performance
-# n_clusters_range = range(2, 10)
-# results_df = evaluate_hierarchical_clustering(X, n_clusters_range, linkage_method='ward')
-
-# # Print clustering results
-# print_hierarchical_results(results_df)
-
-# # Plot evaluation metrics
-# plot_evaluation_metrics(results_df)
-
-# # Visualize clustering with the best number of clusters
-# best_n_clusters = results_df.loc[results_df['Silhouette Score'].idxmax(), 'Number of Clusters']
-# model = AgglomerativeClustering(n_clusters=int(best_n_clusters), linkage='ward')
-# labels = model.fit_predict(X)
-# plot_clusters(X_pca, labels, title=f"Agglomerative Clustering with {best_n_clusters} Clusters")
-
-# output_dir_outlier_dectection = "figs/outlier_detection/"
-# os.makedirs(output_dir_outlier_dectection, exist_ok=True)
-# # # -------------------------------------Outlier detection------------------------------------------------
-# feature_data = data.drop(columns='NObeyesdad', inplace=False)
-# iso_forest = IsolationForest()
-
-# # Isolation Forest 
-# iso_forest = IsolationForest(contamination=0.01, random_state=42)
-# data['Outlier_ISO'] = iso_forest.fit_predict(feature_data)
-
-# plt.figure(figsize=(10, 6))
-# sns.scatterplot(data=data, x='Age', y='Weight', hue='Outlier_ISO', palette='coolwarm')
-# plt.title("Outlier Detection using Isolation Forest")
-# plt.xlabel("Age")
-# plt.ylabel("Weight")
-# plt.legend(title="Outlier")
-# plt.savefig("figs/outlier_detection/ISOLation_Forest.png")
-# plt.show()
-
-# print("Isolation Forest Outlier Counts:")
-# print(data['Outlier_ISO'].value_counts())
-
-# outliers = data[data['Outlier_ISO'] == -1]
-# print(f"Number of outliers detected: {len(outliers)}")
-
-# # Calculate z-scores for numerical features
-# numerical_features = feature_data.columns  # Exclude categorical or target features
-
-# # Compute how far each outlier lies from the mean for selected features
-# deviation_from_mean = outliers[numerical_features] - feature_data[numerical_features].mean()
-# for col in numerical_features:
-#     print(f"Outliers for {col}:")
-#     print(deviation_from_mean[col].abs().sort_values(ascending=False).head())
-#     print("-" * 40)
-
-# # Visualize deviations for one feature (e.g., Weight)
-# plt.figure(figsize=(10, 6))
-# sns.boxplot(x='Outlier_ISO', y='Weight', data=data, palette='coolwarm')
-# plt.title("Outliers vs Non-Outliers for Weight")
-# plt.xlabel("Outlier (ISO Forest)")
-# plt.ylabel("Weight")
-# plt.savefig("figs/outlier_detection/ISO_variation_in_oultiers")
-# plt.show()
-
-# # # ---- LOF ------
-# # Extract numerical data for LOF
-# feature_data = data.drop(columns='NObeyesdad', inplace=False)
-
-# # Apply Local Outlier Factor
-# lof = LocalOutlierFactor(n_neighbors=5, contamination=0.05)
-# outlier_labels = lof.fit_predict(feature_data)
-
-# # Add outlier labels to the dataframe
-# data['Outlier_LOF'] = outlier_labels
-
-# outliers_LOF = data[data['Outlier_LOF'] == -1]
-
-# numerical_features = feature_data.columns
-# deviation_from_mean = outliers_LOF[numerical_features] - feature_data[numerical_features].mean()
-# for col in numerical_features:
-#     print(f"Outliers for {col}:")
-#     print(deviation_from_mean[col].abs().sort_values(ascending=False).head())
-#     print("-" * 40)
-
-# # Visualize deviations for one feature (e.g., Weight)
-# plt.figure(figsize=(10, 6))
-# sns.boxplot(x='Outlier_LOF', y='Weight', data=data, palette='coolwarm')
-# plt.title("Outliers vs Non-Outliers for Weight")
-# plt.xlabel("Outlier (LOF)")
-# plt.ylabel("Weight")
-# plt.savefig("figs/outlier_detection/LOF_variation_in_oultiers")
-# plt.show()
-
-# # Visualize the results using a scatter plot
-# plt.figure(figsize=(10, 6))
-# sns.scatterplot(data=data, x='Age', y='Weight', hue='Outlier_LOF', palette='coolwarm')
-# plt.title("Outlier Detection using Local Outlier Factor")
-# plt.xlabel("Age")
-# plt.ylabel("Weight")
-# plt.legend(title="Outlier")
-# plt.savefig("figs/outlier_detection/LOF_outliers")
-# plt.show()
-
-# # Count and display the number of outliers detected
-# n_outliers = sum(outlier_labels == -1)
-# print(f"Local Outlier Factor detected {n_outliers} outliers out of {feature_data.shape[0]} samples.")
-# # data = data.drop(columns='Outlier_LOF', inplace=False)
-
-
-# ## EllipticEnvelope
-# feature_data = data.drop(columns='NObeyesdad', inplace=False)
-# feature_data = feature_data[numerical_columns]
-
-# # Apply EllipticEnvelope
-# elliptic_env = EllipticEnvelope(contamination=0.05, random_state=42)
-# elliptic_env.fit(feature_data)
-# outlier_labels_elliptic = elliptic_env.predict(feature_data)
-
-# data['Outlier_Elliptic'] = outlier_labels_elliptic
-# outliers_elliptic = data[data['Outlier_Elliptic'] == -1]
-# plt.figure(figsize=(10, 6))
-# sns.scatterplot(data=data, x='Age', y='Weight', hue='Outlier_Elliptic', palette='coolwarm')
-# plt.title("Outlier Detection using Elliptic Envelope")
-# plt.xlabel("Age")
-# plt.ylabel("Weight")
-# plt.legend(title="Outlier")
-# plt.savefig("figs/outlier_detection/EllipticEnvelope_outliers.png")
-# plt.show()
-
-# numerical_features = feature_data.columns
-# deviation_from_mean = outliers_elliptic[numerical_features] - feature_data[numerical_features].mean()
-
-# # Print the largest deviations for each feature
-# for col in numerical_features:
-#     print(f"Outliers for {col}:")
-#     print(deviation_from_mean[col].abs().sort_values(ascending=False).head())
-#     print("-" * 40)
-
-# # Visualize deviations for one feature (e.g., Weight)
-# plt.figure(figsize=(10, 6))
-# sns.boxplot(x='Outlier_Elliptic', y='Weight', data=data, palette='coolwarm')
-# plt.title("Outliers vs Non-Outliers for Weight (Elliptic Envelope)")
-# plt.xlabel("Outlier (Elliptic Envelope)")
-# plt.ylabel("Weight")
-# plt.savefig("figs/outlier_detection/EllipticEnvelope_variation_in_outliers.png")
-# plt.show()
-
-# # Count and display the number of outliers detected
-# n_outliers_elliptic = sum(outlier_labels_elliptic == -1)
-# print(f"Elliptic Envelope detected {n_outliers_elliptic} outliers out of {feature_data.shape[0]} samples.")
-
-# ##Removal of outliers based on above results
-# data_zscores = data[numerical_columns].apply(zscore)
-# z_threshold = 3
-# outliers_zscore = (data_zscores > z_threshold) | (data_zscores < -z_threshold)
-# data = data[~outliers_zscore.any(axis=1)]
-# common_outliers = (
-#         set(data[data['Outlier_Elliptic'] == -1].index) &
-#         set(data[data['Outlier_ISO'] == -1].index) &
-#         set(data[data['Outlier_LOF'] == -1].index)
-# )
-# print(f"Number of common outliers: {len(common_outliers)}")
-
-# data = data.drop(index=common_outliers)
-
-# data.to_csv('cleaned_data.csv', index=False)
-# feature_data = data.drop(columns='Outlier_Elliptic', inplace=False)
-# feature_data = data.drop(columns='Outlier_ISO', inplace=False)
-# feature_data = data.drop(columns='Outlier_LOF', inplace=False)
-# print(data.info())
+# DBSCAN Clustering
+Analyze kNN distances for estimating optimal eps
+neighbors = NearestNeighbors(n_neighbors=10)
+neighbors_fit = neighbors.fit(X_pca)
+distances, _ = neighbors_fit.kneighbors(X_pca)
+distances = np.sort(distances[:, -1])
+
+# Plot kNN distances
+plt.figure(figsize=(10, 6))
+plt.plot(distances)
+plt.title("kNN Distance Plot")
+plt.xlabel("Points Sorted by Distance")
+plt.ylabel("Distance to 10th Nearest Neighbor")
+plt.grid(True)
+plt.show()
+
+# Define the range of eps values for DBSCAN
+eps_values = [4.0, 4.2, 4.5, 4.8, 5.0]  # Adjust this based on kNN plot
+min_samples = 10
+
+dbscan_silhouette_scores = []
+dbscan_calinski_scores = []
+dbscan_davies_scores = []
+dbscan_num_clusters = []
+
+dbscan_base_dir = "figs/dbscan_clustering/cluster"
+Path(dbscan_base_dir).mkdir(parents=True, exist_ok=True)
+
+for eps in eps_values:
+    dbscan = DBSCAN(eps=eps, min_samples=min_samples)
+    labels = dbscan.fit_predict(X_pca)
+
+    num_clusters = len(set(labels)) - (1 if -1 in labels else 0)
+    dbscan_num_clusters.append(num_clusters)
+
+    if num_clusters <= 1:
+        print(f"DBSCAN skipped for eps={eps} (all points classified as noise).")
+        dbscan_silhouette_scores.append(None)
+        dbscan_calinski_scores.append(None)
+        dbscan_davies_scores.append(None)
+        continue
+
+    silhouette = silhouette_score(X_pca, labels)
+    calinski = calinski_harabasz_score(X_pca, labels)
+    davies = davies_bouldin_score(X_pca, labels)
+
+    dbscan_silhouette_scores.append(silhouette)
+    dbscan_calinski_scores.append(calinski)
+    dbscan_davies_scores.append(davies)
+
+    plt.figure(figsize=(10, 6))
+    scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', s=50, alpha=0.7)
+    plt.title(f"DBSCAN Clustering (eps={eps}, min_samples={min_samples})")
+    plt.xlabel('PCA Component 1')
+    plt.ylabel('PCA Component 2')
+    plt.colorbar(scatter)
+    filename = f"dbscan_eps_{eps}.png"
+    filepath = os.path.join(dbscan_base_dir, filename)
+    plt.savefig(filepath, dpi=300, bbox_inches='tight')
+    plt.show()
+    plt.close()
+
+# Normalize the scores for comparison
+dbscan_silhouette_array = np.array([score if score is not None else 0 for score in dbscan_silhouette_scores])
+dbscan_calinski_array = np.array([score if score is not None else 0 for score in dbscan_calinski_scores])
+dbscan_davies_array = np.array([score if score is not None else np.inf for score in dbscan_davies_scores])
+
+scaler = MinMaxScaler()
+dbscan_silhouette_normalized = scaler.fit_transform(dbscan_silhouette_array.reshape(-1, 1)).flatten()
+dbscan_calinski_normalized = scaler.fit_transform(dbscan_calinski_array.reshape(-1, 1)).flatten()
+dbscan_davies_normalized = scaler.fit_transform((1 / dbscan_davies_array).reshape(-1, 1)).flatten()
+
+dbscan_average_scores = (dbscan_silhouette_normalized + dbscan_calinski_normalized + dbscan_davies_normalized) / 3
+
+dbscan_best_eps_index = np.argmax(dbscan_average_scores)
+dbscan_best_eps = eps_values[dbscan_best_eps_index]
+
+print("DBSCAN Normalized Scores:")
+print(f"Silhouette: {dbscan_silhouette_normalized}")
+print(f"Calinski-Harabasz: {dbscan_calinski_normalized}")
+print(f"Inverted Davies-Bouldin: {dbscan_davies_normalized}")
+print(f"Average Scores: {dbscan_average_scores}")
+print(f"Best eps value: {dbscan_best_eps}")
+
+dbscan_results_df = pd.DataFrame({
+    'Eps': eps_values,
+    'Min Samples': min_samples,
+    'Clusters': dbscan_num_clusters,
+    'Silhouette Score': dbscan_silhouette_scores,
+    'Calinski-Harabasz Index': dbscan_calinski_scores,
+    'Davies-Bouldin Index': dbscan_davies_scores,
+})
+
+print("DBSCAN Results Summary:")
+print(dbscan_results_df)
+
+
+
+# Hierarchical Clustering
+
+print("Hierarchical Clustering Results")
+
+
+def plot_dendrogram(X, method='ward', truncate_level=5, title="Hierarchical Clustering Dendrogram"):
+    """Plots a dendrogram for hierarchical clustering."""
+    plt.figure(figsize=(12, 8))
+    linkage_matrix = linkage(X, method=method)
+    dendrogram(linkage_matrix, truncate_mode='level', p=truncate_level)
+    plt.title(title)
+    plt.xlabel("Sample Index")
+    plt.ylabel("Distance")
+    plt.show()
+
+
+def evaluate_hierarchical_clustering(X, n_clusters_range, linkage_method='ward'):
+    """Evaluates hierarchical clustering using multiple metrics."""
+    hierarchical_results = []
+
+    for n_clusters in n_clusters_range:
+        model = AgglomerativeClustering(n_clusters=n_clusters, linkage=linkage_method)
+        labels = model.fit_predict(X)
+
+        silhouette = silhouette_score(X, labels)
+        calinski = calinski_harabasz_score(X, labels)
+        davies = davies_bouldin_score(X, labels)
+
+        hierarchical_results.append({
+            'Number of Clusters': n_clusters,
+            'Silhouette Score': silhouette,
+            'Calinski-Harabasz Index': calinski,
+            'Davies-Bouldin Index': davies
+        })
+
+    return pd.DataFrame(hierarchical_results)
+
+
+def print_hierarchical_results(df):
+    """Prints hierarchical clustering results in a tabular format."""
+    print(df)
+    print("\nBest Results:")
+    best_silhouette_idx = df['Silhouette Score'].idxmax()
+    print(f"Best Number of Clusters (Silhouette): {df.loc[best_silhouette_idx, 'Number of Clusters']}")
+    print(f"Silhouette Score: {df.loc[best_silhouette_idx, 'Silhouette Score']:.4f}")
+    print(f"Calinski-Harabasz Index: {df.loc[best_silhouette_idx, 'Calinski-Harabasz Index']:.4f}")
+    print(f"Davies-Bouldin Index: {df.loc[best_silhouette_idx, 'Davies-Bouldin Index']:.4f}")
+
+
+def plot_evaluation_metrics(df):
+    """Plots evaluation metrics for hierarchical clustering."""
+    plt.figure(figsize=(15, 5))
+
+    # Silhouette Score
+    plt.subplot(1, 3, 1)
+    plt.plot(df['Number of Clusters'], df['Silhouette Score'], marker='o')
+    plt.title("Silhouette Score vs. Number of Clusters")
+    plt.xlabel("Number of Clusters")
+    plt.ylabel("Silhouette Score")
+
+    # Calinski-Harabasz Index
+    plt.subplot(1, 3, 2)
+    plt.plot(df['Number of Clusters'], df['Calinski-Harabasz Index'], marker='o', color='orange')
+    plt.title("Calinski-Harabasz Index vs. Number of Clusters")
+    plt.xlabel("Number of Clusters")
+    plt.ylabel("Calinski-Harabasz Index")
+
+    # Davies-Bouldin Index
+    plt.subplot(1, 3, 3)
+    plt.plot(df['Number of Clusters'], df['Davies-Bouldin Index'], marker='o', color='green')
+    plt.title("Davies-Bouldin Index vs. Number of Clusters")
+    plt.xlabel("Number of Clusters")
+    plt.ylabel("Davies-Bouldin Index")
+
+    plt.tight_layout()
+    plt.show()
+
+
+def plot_clusters(X_pca, labels, title="Hierarchical Clustering"):
+    """Plots clustering results using PCA-reduced data."""
+    plt.figure(figsize=(10, 6))
+    scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', s=50, alpha=0.7)
+    plt.title(title)
+    plt.xlabel("PCA Component 1")
+    plt.ylabel("PCA Component 2")
+    plt.colorbar(scatter)
+    plt.show()
+
+
+# Perform hierarchical clustering
+X = data.drop(columns='NObeyesdad')
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)
+
+# Plot dendrogram
+plot_dendrogram(X, method='ward', truncate_level=5)
+
+# Evaluate clustering performance
+n_clusters_range = range(2, 10)
+results_df = evaluate_hierarchical_clustering(X, n_clusters_range, linkage_method='ward')
+
+# Print clustering results
+print_hierarchical_results(results_df)
+
+# Plot evaluation metrics
+plot_evaluation_metrics(results_df)
+
+# Visualize clustering with the best number of clusters
+best_n_clusters = results_df.loc[results_df['Silhouette Score'].idxmax(), 'Number of Clusters']
+model = AgglomerativeClustering(n_clusters=int(best_n_clusters), linkage='ward')
+labels = model.fit_predict(X)
+plot_clusters(X_pca, labels, title=f"Agglomerative Clustering with {best_n_clusters} Clusters")
+
+output_dir_outlier_dectection = "figs/outlier_detection/"
+os.makedirs(output_dir_outlier_dectection, exist_ok=True)
+# # -------------------------------------Outlier detection------------------------------------------------
+feature_data = data.drop(columns='NObeyesdad', inplace=False)
+feature_data = feature_data[numerical_columns]
+iso_forest = IsolationForest()
+
+# Isolation Forest 
+iso_forest = IsolationForest(contamination=0.01, random_state=42)
+data['Outlier_ISO'] = iso_forest.fit_predict(feature_data)
+
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=data, x='Age', y='Weight', hue='Outlier_ISO', palette='coolwarm')
+plt.title("Outlier Detection using Isolation Forest")
+plt.xlabel("Age")
+plt.ylabel("Weight")
+plt.legend(title="Outlier")
+plt.savefig("figs/outlier_detection/ISOLation_Forest.png")
+plt.show()
+
+print("Isolation Forest Outlier Counts:")
+print(data['Outlier_ISO'].value_counts())
+
+outliers = data[data['Outlier_ISO'] == -1]
+print(f"Number of outliers detected: {len(outliers)}")
+
+# Calculate z-scores for numerical features
+numerical_features = feature_data.columns  # Exclude categorical or target features
+
+# Compute how far each outlier lies from the mean for selected features
+deviation_from_mean = outliers[numerical_features] - feature_data[numerical_features].mean()
+for col in numerical_features:
+    print(f"Outliers for {col}:")
+    print(deviation_from_mean[col].abs().sort_values(ascending=False).head())
+    print("-" * 40)
+
+# Visualize deviations for one feature (e.g., Weight)
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Outlier_ISO', y='Weight', data=data, palette='coolwarm')
+plt.title("Outliers vs Non-Outliers for Weight")
+plt.xlabel("Outlier (ISO Forest)")
+plt.ylabel("Weight")
+plt.savefig("figs/outlier_detection/ISO_variation_in_oultiers")
+plt.show()
+
+# # ---- LOF ------
+# Extract numerical data for LOF
+feature_data = data.drop(columns='NObeyesdad', inplace=False)
+feature_data = feature_data[numerical_columns]
+
+# Apply Local Outlier Factor
+lof = LocalOutlierFactor(n_neighbors=5, contamination=0.05)
+outlier_labels = lof.fit_predict(feature_data)
+
+# Add outlier labels to the dataframe
+data['Outlier_LOF'] = outlier_labels
+
+outliers_LOF = data[data['Outlier_LOF'] == -1]
+
+numerical_features = feature_data.columns
+deviation_from_mean = outliers_LOF[numerical_features] - feature_data[numerical_features].mean()
+for col in numerical_features:
+    print(f"Outliers for {col}:")
+    print(deviation_from_mean[col].abs().sort_values(ascending=False).head())
+    print("-" * 40)
+
+# Visualize deviations for one feature (e.g., Weight)
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Outlier_LOF', y='Weight', data=data, palette='coolwarm')
+plt.title("Outliers vs Non-Outliers for Weight")
+plt.xlabel("Outlier (LOF)")
+plt.ylabel("Weight")
+plt.savefig("figs/outlier_detection/LOF_variation_in_oultiers")
+plt.show()
+
+# Visualize the results using a scatter plot
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=data, x='Age', y='Weight', hue='Outlier_LOF', palette='coolwarm')
+plt.title("Outlier Detection using Local Outlier Factor")
+plt.xlabel("Age")
+plt.ylabel("Weight")
+plt.legend(title="Outlier")
+plt.savefig("figs/outlier_detection/LOF_outliers")
+plt.show()
+
+# Count and display the number of outliers detected
+n_outliers = sum(outlier_labels == -1)
+print(f"Local Outlier Factor detected {n_outliers} outliers out of {feature_data.shape[0]} samples.")
+# data = data.drop(columns='Outlier_LOF', inplace=False)
+
+
+## EllipticEnvelope
+feature_data = data.drop(columns='NObeyesdad', inplace=False)
+feature_data = feature_data[numerical_columns]
+
+# Apply EllipticEnvelope
+elliptic_env = EllipticEnvelope(contamination=0.05, random_state=42)
+elliptic_env.fit(feature_data)
+outlier_labels_elliptic = elliptic_env.predict(feature_data)
+
+data['Outlier_Elliptic'] = outlier_labels_elliptic
+outliers_elliptic = data[data['Outlier_Elliptic'] == -1]
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=data, x='Age', y='Weight', hue='Outlier_Elliptic', palette='coolwarm')
+plt.title("Outlier Detection using Elliptic Envelope")
+plt.xlabel("Age")
+plt.ylabel("Weight")
+plt.legend(title="Outlier")
+plt.savefig("figs/outlier_detection/EllipticEnvelope_outliers.png")
+plt.show()
+
+numerical_features = feature_data.columns
+deviation_from_mean = outliers_elliptic[numerical_features] - feature_data[numerical_features].mean()
+
+# Print the largest deviations for each feature
+for col in numerical_features:
+    print(f"Outliers for {col}:")
+    print(deviation_from_mean[col].abs().sort_values(ascending=False).head())
+    print("-" * 40)
+
+# Visualize deviations for one feature (e.g., Weight)
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Outlier_Elliptic', y='Weight', data=data, palette='coolwarm')
+plt.title("Outliers vs Non-Outliers for Weight (Elliptic Envelope)")
+plt.xlabel("Outlier (Elliptic Envelope)")
+plt.ylabel("Weight")
+plt.savefig("figs/outlier_detection/EllipticEnvelope_variation_in_outliers.png")
+plt.show()
+
+# Count and display the number of outliers detected
+n_outliers_elliptic = sum(outlier_labels_elliptic == -1)
+print(f"Elliptic Envelope detected {n_outliers_elliptic} outliers out of {feature_data.shape[0]} samples.")
+
+##Removal of outliers based on above results
+data_zscores = data[numerical_columns].apply(zscore)
+z_threshold = 3
+outliers_zscore = (data_zscores > z_threshold) | (data_zscores < -z_threshold)
+data = data[~outliers_zscore.any(axis=1)]
+common_outliers = (
+        set(data[data['Outlier_Elliptic'] == -1].index) &
+        set(data[data['Outlier_ISO'] == -1].index) &
+        set(data[data['Outlier_LOF'] == -1].index)
+)
+print(f"Number of common outliers: {len(common_outliers)}")
+
+data = data.drop(index=common_outliers)
+
+data.to_csv('cleaned_data.csv', index=False)
+feature_data = data.drop(columns='Outlier_Elliptic', inplace=False)
+feature_data = data.drop(columns='Outlier_ISO', inplace=False)
+feature_data = data.drop(columns='Outlier_LOF', inplace=False)
+print(data.info())
 
 # ----------------------------------------Feature Selection----------------------------------------
 
