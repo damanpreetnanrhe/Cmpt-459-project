@@ -127,7 +127,7 @@ The following hyperparameters were optimized using **GridSearchCV**:
 
 The grid search systematically explored combinations of C, gamma, and kernel, identifying the optimal set of parameters for your data. Before tuning, the default parameters might not have been suitable for your dataset, leading to suboptimal performance.
 
-![grid](figs/ROC_Curves.png)
+![grid](figs/grid_search.png)
 
 ### Model Comparisons
 The table below summarizes the performance of all evaluated models:
@@ -157,6 +157,8 @@ The table below summarizes the performance of all evaluated models:
 ### Why Random Forest Excelled
 - **Robustness**: Aggregates predictions from multiple decision trees, minimizing overfitting and improving generalization.
 - **Feature Importance**: Offers clear insights into which features (like BMI, weight, and age) are most predictive, aiding interpretability.
+
+![roc](figs/ROC_Curves.png)
 
 ## Outlier Detection
 To ensure data quality and enhance model performance, the following outlier detection methods were applied:
