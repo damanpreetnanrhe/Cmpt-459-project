@@ -353,7 +353,7 @@ print(results_df)
 
 
 # DBSCAN Clustering
-Analyze kNN distances for estimating optimal eps
+#Analyze kNN distances for estimating optimal eps
 neighbors = NearestNeighbors(n_neighbors=10)
 neighbors_fit = neighbors.fit(X_pca)
 distances, _ = neighbors_fit.kneighbors(X_pca)
@@ -612,7 +612,6 @@ plt.show()
 # Extract numerical data for LOF
 feature_data = data.drop(columns='NObeyesdad', inplace=False)
 feature_data = feature_data[numerical_columns]
-
 # Apply Local Outlier Factor
 lof = LocalOutlierFactor(n_neighbors=5, contamination=0.05)
 outlier_labels = lof.fit_predict(feature_data)
