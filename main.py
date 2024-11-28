@@ -35,6 +35,8 @@ from scipy.stats import zscore
 from sklearn.covariance import EllipticEnvelope
 import os
 
+
+# --------------------------------------Data Preprocessing-----------------------------------------
 pd.set_option('display.max_columns', None)
 
 # Ensure the 'figs' directory exists
@@ -56,7 +58,6 @@ numerical_columns = ['Height', 'Weight', 'FCVC', 'NCP', 'CH2O', 'FAF', 'TUE']
 data[numerical_columns] = data[numerical_columns].round(2)
 categorical_columns = ['Gender', 'family_history_with_overweight', 'FAVC', 'CAEC', 'SMOKE', 'SCC', 'CALC', 'MTRANS']
 
-# --------------------------------------Data Preprocessing-----------------------------------------
 ####   Normalization ####
 #     # Min-Max Sacling 
 # scaler = MinMaxScaler()
@@ -68,49 +69,9 @@ categorical_columns = ['Gender', 'family_history_with_overweight', 'FAVC', 'CAEC
 # data[numerical_columns] = Standard_Scaler.fit_transform(data[numerical_columns])
 # print(data)
 
-# num_bins = 4
-# # Apply equal-depth (quantile) binning
-# for col in numerical_columns:
-#     data[f'{col}_equal_depth'] = pd.qcut(data[col], q=num_bins, labels=False, duplicates='drop')
-
-# print(data['Age_equal_depth'].unique())
-
-# data.to_csv('binned_data.csv', index=False)
-
-# print(data['NObeyesdad'].value_counts(normalize=True))
-
-# # data['NObeyesdad'] = data['NObeyesdad'].replace(['Normal_Weight', 'Overweight_Level_I', 'Overweight_Level_II',
-# #                                                  'Obesity_Type_I', 'Insufficient_Weight', 'Obesity_Type_II',
-# #                                                  'Obesity_Type_III'], [0, 1, 1, 1, 0, 1, 1])
-
-# print(data['NObeyesdad'].unique())
-# print(data['NObeyesdad'].value_counts(normalize=True))
-
-# normal_weight_count = data[data['NObeyesdad'] == 0].shape[0]
-# print(normal_weight_count)
-
 data['BMI'] = round(data['Weight'] / (data['Height']) ** 2, 2)
 
 # ----------------------------------------EDA---------------------------------------
-# target_column = 'NObeyesdad'
-# for col in categorical_columns:
-#     if col != target_column:  # Skip the target column itself
-#         # Calculate mean of the target column grouped by the current categorical column
-#         group_mean = data.groupby(col)[target_column].mean()
-
-#         # Plotting
-#         group_mean.plot(kind='bar', title=f"Mean '{target_column}' by {col}")
-#         plt.xlabel(col)
-#         plt.ylabel(f"Mean {target_column}")
-#         plt.xticks(rotation=45)
-#         plt.show()
-
-# plt.figure(figsize=(10, 8))
-# correlation_matrix = data[numerical_columns + ['NObeyesdad']].corr()
-# sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
-# plt.title('Correlation Heatmap')
-# plt.show()
-
 data_copy = data.copy()
 columns = ['FCVC', 'NCP', 'CH2O', 'FAF', 'TUE']
 
@@ -166,12 +127,6 @@ new_column_names = {
 data_copy.rename(columns=new_column_names, inplace=True)
 print(data_copy.info())
 data_copy.to_csv('refined_data.csv', index=False)
-
-# LabelEncoder = LabelEncoder()
-# for col in categorical_columns:
-#     data[col] = LabelEncoder.fit_transform(data[col])
-# # # print(data)
-
 
 # ####### Average age of each obesity type #########
 print(data.groupby("NObeyesdad")['Age'].median())
@@ -316,85 +271,85 @@ results_df = pd.DataFrame({
 
 print(results_df)
 
-# # K-Means Clustering with target column
-X = data.drop(columns='NObeyesdad', inplace=False)
+# # # K-Means Clustering with target column
+# X = data.drop(columns='NObeyesdad', inplace=False)
 
-# Apply PCA for dimensionality reduction (2 components for visualization)
-pca = PCA(n_components=2)
-X_pca = pca.fit_transform(X)
+# # Apply PCA for dimensionality reduction (2 components for visualization)
+# pca = PCA(n_components=2)
+# X_pca = pca.fit_transform(X)
 
-# K-Means Clustering with target column 
-kmeans = KMeans(n_clusters=4, random_state=42)
-kmeans_labels = kmeans.fit_predict(X)
+# # K-Means Clustering with target column 
+# kmeans = KMeans(n_clusters=4, random_state=42)
+# kmeans_labels = kmeans.fit_predict(X)
 
-cluster_range = range(2, 10)
-eps_values = [0.3, 0.5, 0.7, 0.9, 1.1]
+# cluster_range = range(2, 10)
+# eps_values = [0.3, 0.5, 0.7, 0.9, 1.1]
 
-kmeans_silhouette_scores = []
-kmeans_calinski_scores = []
-kmeans_davies_scores = []
-
-
-def plot_clusters(X, labels, title):
-    plt.figure(figsize=(10, 6))
-    scatter = plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', s=50, alpha=0.7)
-    plt.title(title)
-    plt.xlabel('PCA Component 1')
-    plt.ylabel('PCA Component 2')
-    plt.colorbar(scatter)
-    plt.show()
+# kmeans_silhouette_scores = []
+# kmeans_calinski_scores = []
+# kmeans_davies_scores = []
 
 
-base_dir = "figs/k_Means_Clustering/cluster"
-Path(base_dir).mkdir(parents=True, exist_ok=True)
-for k in cluster_range:
-    kmeans = KMeans(n_clusters=k, random_state=42)
-    labels = kmeans.fit_predict(X)
-    silhouette = silhouette_score(X, labels)
-    calinski = calinski_harabasz_score(X, labels)
-    davies = davies_bouldin_score(X, labels)
-    kmeans_silhouette_scores.append(silhouette)
-    kmeans_calinski_scores.append(calinski)
-    kmeans_davies_scores.append(davies)
+# def plot_clusters(X, labels, title):
+#     plt.figure(figsize=(10, 6))
+#     scatter = plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', s=50, alpha=0.7)
+#     plt.title(title)
+#     plt.xlabel('PCA Component 1')
+#     plt.ylabel('PCA Component 2')
+#     plt.colorbar(scatter)
+#     plt.show()
 
-    plot_clusters(X_pca, labels, f"K-Means Clustering (n_clusters={k})")
-    filename = f"cluster_k{k}.png"
-    filepath = os.path.join(base_dir, filename)
-    plt.savefig(filepath, dpi=300, bbox_inches='tight')
-    plt.close()
 
-silhouette_array = np.array(kmeans_silhouette_scores)
-calinski_array = np.array(kmeans_calinski_scores)
-davies_array = np.array(kmeans_davies_scores)
+# base_dir = "figs/k_Means_Clustering/cluster"
+# Path(base_dir).mkdir(parents=True, exist_ok=True)
+# for k in cluster_range:
+#     kmeans = KMeans(n_clusters=k, random_state=42)
+#     labels = kmeans.fit_predict(X)
+#     silhouette = silhouette_score(X, labels)
+#     calinski = calinski_harabasz_score(X, labels)
+#     davies = davies_bouldin_score(X, labels)
+#     kmeans_silhouette_scores.append(silhouette)
+#     kmeans_calinski_scores.append(calinski)
+#     kmeans_davies_scores.append(davies)
 
-scaler = MinMaxScaler()
-silhouette_normalized = scaler.fit_transform(silhouette_array.reshape(-1, 1)).flatten()
-calinski_normalized = scaler.fit_transform(calinski_array.reshape(-1, 1)).flatten()
-davies_normalized = scaler.fit_transform((1 / davies_array).reshape(-1, 1)).flatten()
+#     plot_clusters(X_pca, labels, f"K-Means Clustering (n_clusters={k})")
+#     filename = f"cluster_k{k}.png"
+#     filepath = os.path.join(base_dir, filename)
+#     plt.savefig(filepath, dpi=300, bbox_inches='tight')
+#     plt.close()
 
-# Compute average score for each k
-average_scores = (silhouette_normalized + calinski_normalized + davies_normalized) / 3
+# silhouette_array = np.array(kmeans_silhouette_scores)
+# calinski_array = np.array(kmeans_calinski_scores)
+# davies_array = np.array(kmeans_davies_scores)
 
-# Find the best k
-best_k_index = np.argmax(average_scores)
-best_k = cluster_range[best_k_index]
+# scaler = MinMaxScaler()
+# silhouette_normalized = scaler.fit_transform(silhouette_array.reshape(-1, 1)).flatten()
+# calinski_normalized = scaler.fit_transform(calinski_array.reshape(-1, 1)).flatten()
+# davies_normalized = scaler.fit_transform((1 / davies_array).reshape(-1, 1)).flatten()
 
-print("Normalized Scores:")
-print(f"Silhouette: {silhouette_normalized}")
-print(f"Calinski-Harabasz: {calinski_normalized}")
-print(f"Inverted Davies-Bouldin: {davies_normalized}")
-print(f"Average Scores: {average_scores}")
-print(f"Best number of clusters: {best_k}")
+# # Compute average score for each k
+# average_scores = (silhouette_normalized + calinski_normalized + davies_normalized) / 3
 
-# Create a DataFrame to summarize the evaluation metrics
-results_df = pd.DataFrame({
-    'Number of Clusters': list(cluster_range),
-    'Silhouette Score': kmeans_silhouette_scores,
-    'Calinski-Harabasz Index': kmeans_calinski_scores,
-    'Davies-Bouldin Index': kmeans_davies_scores
-})
+# # Find the best k
+# best_k_index = np.argmax(average_scores)
+# best_k = cluster_range[best_k_index]
 
-print(results_df)
+# print("Normalized Scores:")
+# print(f"Silhouette: {silhouette_normalized}")
+# print(f"Calinski-Harabasz: {calinski_normalized}")
+# print(f"Inverted Davies-Bouldin: {davies_normalized}")
+# print(f"Average Scores: {average_scores}")
+# print(f"Best number of clusters: {best_k}")
+
+# # Create a DataFrame to summarize the evaluation metrics
+# results_df = pd.DataFrame({
+#     'Number of Clusters': list(cluster_range),
+#     'Silhouette Score': kmeans_silhouette_scores,
+#     'Calinski-Harabasz Index': kmeans_calinski_scores,
+#     'Davies-Bouldin Index': kmeans_davies_scores
+# })
+
+# print(results_df)
 
 
 ## DBSCAN Clustering
@@ -630,11 +585,6 @@ plt.show()
 print("Isolation Forest Outlier Counts:")
 print(data['Outlier_ISO'].value_counts())
 
-# Print the outliers
-# outliers = data[data['Outlier_ISO'] == -1]
-# print("Outliers detected by Isolation Forest:")
-# print(outliers)
-
 outliers = data[data['Outlier_ISO'] == -1]
 print(f"Number of outliers detected: {len(outliers)}")
 
@@ -656,10 +606,6 @@ plt.xlabel("Outlier (ISO Forest)")
 plt.ylabel("Weight")
 plt.savefig("figs/outlier_detection/ISO_variation_in_oultiers")
 plt.show()
-
-# data = data[data['Outlier_ISO'] == 1]
-# data = data.drop(columns='Outlier_ISO', inplace=False)
-
 
 # # ---- LOF ------
 # Extract numerical data for LOF
@@ -766,8 +712,8 @@ print(data.info())
 
 # ----------------------------------------Feature Selection----------------------------------------
 
-# Mutual Information
-# mi_scores = mutual_info_classif(resampled_data[numerical_columns], resampled_data['NObeyesdad'])
+## Mutual Information - not used in final code
+# mi_scores = mutual_info_classif(data[numerical_columns], data['NObeyesdad'])
 # mi_scores_df = pd.DataFrame({'Feature': numerical_columns, 'MI Score': mi_scores}).sort_values(by='MI Score',
 #                                                                                                ascending=False)
 
@@ -777,6 +723,7 @@ print(data.info())
 # # Top feature based on the scores
 # selected_features_mi = mi_scores_df[mi_scores_df['MI Score'] > 0.01]['Feature'].tolist()  # Example threshold
 # print("Selected Features by Mutual Information:", selected_features_mi)
+
 
 
 # ----------------------- Classification ---------------------
@@ -816,22 +763,12 @@ classifiers = {
     'Decision Tree': DecisionTreeClassifier(class_weight='balanced', random_state=42)
 }
 
+kf = KFold(n_splits=5, shuffle=True, random_state=42)
+
+######## Hyperparameter Tuning ########
 best_classifiers = {}
 best_score = 0.0
 
-kf = KFold(n_splits=5, shuffle=True, random_state=42)
-
-# f = KFold(n_splits=5, shuffle=True, random_state=42)
-# default_scores = {}
-# for name, clf in classifiers.items():
-#     clf.fit(X_train, y_train)  # Train with default hyperparameters
-#     y_pred = clf.predict(X_test)
-#     f1 = f1_score(y_test, y_pred, average='weighted')
-#     default_scores[name] = f1
-#     print(f"Model: {name}")
-#     print("\nClassification Report:\n", classification_report(y_test, y_pred))
-
-######## Hyperparameter Tuning ########
 for name, clf in classifiers.items():
     grid_search = GridSearchCV(clf, param_grid[name], cv=kf, scoring='f1_weighted', n_jobs=-1)
     grid_search.fit(X_train, y_train)
@@ -848,14 +785,6 @@ for name, clf in classifiers.items():
     print(f"Model: {name}")
     print("\nClassification Report (ss):\n", classification_report(y_test, y_pred))
 
-    # Display metrics
-    # print(f"Model: {name}")
-    # print(f"Recall: {recall}")
-    # print(f"Accuracy: {accuracy}")
-    # print(f"Precision: {precision}")
-    # print(f"F1-Score: {f1}")
-    # print("-" * 50)
-    # print()
 
 class_labels = ['Insuf', 'Normal', 'Obesi I', 'Obesi II', 'Obesi III', 'OverW I', 'OverW II']
 
@@ -906,3 +835,4 @@ plt.tight_layout()
 plt.title('ROC Curves')
 plt.savefig('figs/ROC_Curves.png')
 plt.show()
+
