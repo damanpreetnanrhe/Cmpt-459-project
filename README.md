@@ -110,10 +110,6 @@ Each model was evaluated using standard metrics, including:
 - **Recall**
 - **F1 Score**
 
-
-### Best Model: Random Forest (With Hyperparameter Tuning)
-The **Random Forest** classifier emerged as the top-performing model after comprehensive hyperparameter tuning. 
-
 #### Performance Metrics:
 - **Accuracy**: 98%
 - **Precision**: 98%
