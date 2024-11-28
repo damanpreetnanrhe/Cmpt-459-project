@@ -23,6 +23,30 @@ This dataset focuses on estimating obesity levels in individuals from Mexico, Pe
 - SciPy
 - OS
 
+## Data Preprocessing
+
+#### Dataset Loading
+- The dataset was loaded using **Pandas** for efficient data manipulation.
+- Configured to display all columns for easier inspection during analysis.
+
+#### Duplicate Removal
+- Duplicate rows were identified and removed to maintain data integrity:
+  ```python
+  data = data.drop_duplicates()
+  ```
+
+#### Handling Missing Values
+- Checked for missing values using:
+  ```python
+  data.isnull().sum()
+  ```
+- The analysis confirmed that there are no missing values in the dataset, as all columns returned a sum of `0`.
+
+#### Normalization and Standardization
+- After analyzing the dataset, feature scaling techniques such as **Min-Max Scaling** and **StandardScaler** were considered.
+- However, the dataset's numerical features were already appropriately scaled, eliminating the need for additional scaling transformations.
+
+
 
 
 
